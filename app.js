@@ -1,10 +1,12 @@
-const express = require("express");
-const app = express();
+const express = require("express"); const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-//hello
+
+
+const users = require("./routes/api/users");
+const quizzes = require("./routes/api/quizzes");
 
 mongoose
     .connect(db, { useNewUrlParser: true })
