@@ -4,13 +4,10 @@ const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-<<<<<<< HEAD
 
 const users = require("./routes/api/users");
 const quizzes = require("./routes/api/quizzes");
-=======
 //hello
->>>>>>> cb86084dfda82d6071994090ce831dc655694703
 
 mongoose
     .connect(db, { useNewUrlParser: true })
