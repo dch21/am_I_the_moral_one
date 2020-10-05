@@ -1,7 +1,6 @@
 {
   "name": "mernproject",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -21,5 +20,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dch21/MERN.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dch21/MERN/issues"
+  },
+  "homepage": "https://github.com/dch21/MERN#readme",
+  "description": ""
 }
