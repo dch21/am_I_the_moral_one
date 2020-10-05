@@ -20,8 +20,8 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password field is necessary";
   }
 
-  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-    errors.password = "Password must be between 6 and 30 characters";
+  if (!Validator.isLength(data.password, { min: 6, max: 20 })) {
+    errors.password = "Password must be between 6 and 20 characters";
   }
 
   if (Validator.isEmpty(data.password2)) {
@@ -39,7 +39,7 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.politicalLeaning)) {
     errors.politicalLeaning = "Political Leaning field is necessary";
   }
-ß
+
   if (Validator.isEmpty(data.religiousAffiliation)) {
     errors.religiousAffiliation = "Religious Affiliation field is necessary";
   }
