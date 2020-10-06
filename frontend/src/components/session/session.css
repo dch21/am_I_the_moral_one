@@ -49,7 +49,7 @@ table {
 	border-spacing: 0;
 }
 
-.login{
+.login, .signup-form {
     padding-top: 40px;
     display: flex;
     flex: wrap; 
@@ -67,7 +67,7 @@ table {
 }
 
 
-.login-submit {
+.login-submit, .signup-submit {
     background-color:white;
     font-weight: bold;
     width: 398px;
@@ -81,6 +81,26 @@ table {
     font-size: 16px;
  }
 
- .login-submit:hover {
+ .login-submit:hover, .signup-submit:hover {
      background-color: #aec198;
+ }
+
+ .signup-form {
+     display: flex;
+     flex-direction: column; 
+ }
+
+.signup-form > input {
+    width: 390px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+
+.signup-form > select {
+    width: 399px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
  }
