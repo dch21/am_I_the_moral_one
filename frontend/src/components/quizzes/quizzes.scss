@@ -1,0 +1,51 @@
+.new-quizzes-div {
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.new-quizzes-div > div {
+    border-radius: 10px;
+    background-color: lightgray;
+    text-align: center;
+    padding-top: 15px;
+    height: 500px;
+}
+
+.new-quizzes-header {
+    font-size: 25px;
+    margin-bottom: 17px;
+    margin-top: 4px;
+}
+
+
+.new-quizzes-directory {
+    width: 15%;
+}
+
+
+.new-quizzes-links {
+    width: 80%;
+    height: 85%;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.new-quizzes-links > div {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.inner-data-box {
+    width: 96%;
+    height: 85%;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+}
