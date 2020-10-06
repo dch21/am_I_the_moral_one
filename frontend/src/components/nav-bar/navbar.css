@@ -1,0 +1,31 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color:white;
+}
+
+.space{
+    width: 160px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.nav-links a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links a:hover{
+    color: #70d9e4 
+}
+
+.nav-title{
+    font-size: 32px;
+    color: black;
+    text-decoration: none;
+}

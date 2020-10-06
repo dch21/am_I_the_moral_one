@@ -71,6 +71,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
+                <h1>Sign Up</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
                         
@@ -92,14 +93,17 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         
-                        <select placeholder="Highest Level of Education" onChange={this.update('education')}>
+                        <select name = 'education' placeholder="Highest Level of Education" onChange={this.update('education')}>
+                            <option  selected disabled>Education</option>
                             <option value="highschool or lower">highschool or lower</option>
                             <option value="undergraduate degree">undergraduate degree</option>
                             <option value="masters/professional degree">masters/professional degree</option>
                             <option value="PhD">PhD</option>
                         </select>
                         
-                        <select placeholder="Age Range" onChange={this.update('age')}>
+                        <select name='age' onChange={this.update('age')}>
+                            <option selected disabled>Age Range</option>
+
                             <option value="under 18">under 18</option>
                             <option value="18 to 22">18 to 22</option>
                             <option value="22 to 40">22 to 40</option>
@@ -107,7 +111,8 @@ class SignupForm extends React.Component {
                             <option value="60 plus">60 plus</option>
                         </select>
 
-                        <select placeholder="Political Leaning" onChange={this.update('politicalLeaning')}>
+                        <select name='politicalLeaning' onChange={this.update('politicalLeaning')}>
+                            <option selected disabled>Political Leaning</option>
                             <option value="Far-left">Far-left</option>
                             <option value="Moderate-left">Moderate-left</option>
                             <option value="Centrist">Centrist</option>
@@ -115,9 +120,10 @@ class SignupForm extends React.Component {
                             <option value="Far-right">Far-right</option>
                         </select>
 
-                        <select placeholder="Religious Affiliation"
+                        <select
                             onChange={this.update('religiousAffiliation')}
                         >
+                            <option selected disabled>Religious Affiliation</option>
                             <option value="Christianity">Christianity</option>
                             <option value="Islam">Islam</option>
                             <option value="Judaism">Judaism</option>
@@ -129,9 +135,10 @@ class SignupForm extends React.Component {
                             <option value="Prefer not to self id">Prefer not to self id</option>
                         </select>
 
-                        <select placeholder="Gender Identity"
+                        <select
                             onChange={this.update('gender')}
                         >
+                            <option selected disabled>Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Non-Bianary">Non-Bianary</option>
@@ -139,16 +146,25 @@ class SignupForm extends React.Component {
                             <option value="Prefer not to self id">Prefer not to self id</option>
                         </select>
 
-                        <select placeholder="Pet Choice"
+                        <select 
+                        onChange={this.update('location')}
+                        >
+                            <option selected disabled>Location</option>
+                            <option value="city">city</option>
+                            <option value="country">country</option>
+                        </select>
+
+                        <select 
                             onChange={this.update('petChoice')}
                         >
+                            <option selected disabled>Pet Choice </option>
                             <option value="dog">dog</option>
                             <option value="cat">cat</option>
                         </select>
 
                         <select
-                        onChange={this.update('ethnicity')}
-                        placeholder="ethnicity">
+                        onChange={this.update('ethnicity')}>
+                            <option selected disabled >Ethnicity</option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Non-White Hispanic">Hispanic</option>
