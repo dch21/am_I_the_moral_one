@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
         
         this.props.signup(user, this.props.history).then(
             user =>{
-            if(user.type != 'RECEIVE_SESSION_ERRORS'){
+            if(user.type !== 'RECEIVE_SESSION_ERRORS'){
             this.props.login({ email: this.state.email, password: this.state.password })}}
             ); 
             

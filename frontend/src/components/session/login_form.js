@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import sessionCSS from './session.css'
+import './session.css'
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
