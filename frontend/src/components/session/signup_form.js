@@ -54,7 +54,13 @@ class SignupForm extends React.Component {
             ethnicity: this.state.ethnicity
         };
 
-        this.props.signup(user, this.props.history);
+        
+        this.props.signup(user, this.props.history).then(
+            user =>{
+            this.props.login({ email: this.state.email, password: this.state.password })}
+            ); 
+            
+       
     }
 
     renderErrors() {
@@ -150,8 +156,9 @@ class SignupForm extends React.Component {
                         onChange={this.update('location')}
                         >
                             <option selected disabled>Location</option>
-                            <option value="city">city</option>
-                            <option value="country">country</option>
+                            <option value="Urban">Urban</option>
+                            <option value="Suburban">Suburban</option>
+                            <option value="Rural">Rural</option>
                         </select>
 
                         <select 

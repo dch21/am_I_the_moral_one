@@ -1,0 +1,73 @@
+.hands-img{
+    width: 100%;
+}
+
+.splash-div {
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.splash-div > div {
+    border-radius: 10px;
+    background-color: lightgray;
+    text-align: center;
+    padding-top: 15px;
+    height: 500px;
+}
+
+.quizzes-taken-header {
+    font-size: 25px;
+    margin-bottom: 17px;
+    margin-top: 4px;
+    
+}
+.questions-answered-header {
+    font-size: 25px;
+    margin-bottom: 17px;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+}
+
+.data-header {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.quizzes-taken-directory {
+    width: 15%;
+}
+
+.questions-answered-box {
+    width: 15%;
+}
+
+.main-data-div {
+    width: 65%;
+}
+
+.questions-answered-list, .quizzes-taken-links {
+    width: 80%;
+    height: 85%;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.questions-answered-list > div, .quizzes-taken-links > div {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.inner-data-box {
+    width: 96%;
+    height: 85%;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+}
