@@ -31,9 +31,9 @@ class NewQuizzes extends React.Component {
                         </div>
                     </div>
 
-                    <div className="questions-answered-box">
-                        <h1 className="questions-answered-header">Questions:</h1>
-                        <div className="questions-answered-list">
+                    <div className="quiz-form-box">
+                        <h1 className="quiz-form-header">Quiz Title:</h1>
+                        <div className="quiz-form">
                             <div>Question 1</div>
                             <div>Question 2</div>
                             <div>Question 3</div>

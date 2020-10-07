@@ -32,7 +32,7 @@ class Splash extends React.Component {
                 </div>
 
                 <div className="questions-answered-box">
-                    <h1 className="questions-answered-header">Questions:</h1>
+                    <h1 className="questions-answered-header">(Selected Quiz):</h1>
                     <div className="questions-answered-list">
                         <div>Question 1</div>
                         <div>Question 2</div>

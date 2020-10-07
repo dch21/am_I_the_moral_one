@@ -13,7 +13,7 @@
     height: 500px;
 }
 
-.new-quizzes-header {
+.new-quizzes-header, .quiz-form-header {
     font-size: 25px;
     margin-bottom: 17px;
     margin-top: 4px;
@@ -21,12 +21,12 @@
 
 
 .new-quizzes-directory {
-    width: 15%;
+    width: 20%;
 }
 
 
-.new-quizzes-links {
-    width: 80%;
+.new-quizzes-links, .quiz-form {
+    width: 86%;
     height: 85%;
     border-radius: 10px;
     background-color: white;
@@ -37,15 +37,19 @@
     overflow-y: scroll;
 }
 
-.new-quizzes-links > div {
+.new-quizzes-links > div, .quiz-form > div {
     margin-left: 20px;
     margin-top: 20px;
 }
 
-.inner-data-box {
+.quiz-form {
     width: 96%;
     height: 85%;
     border-radius: 10px;
     background-color: white;
     margin: auto;
+}
+
+.quiz-form-box {
+    width: 65%;
 }
