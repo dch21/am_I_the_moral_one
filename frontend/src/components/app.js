@@ -9,6 +9,13 @@ import QuizForm from '../components/quiz_form/quiz_form';
 import NewQuizzes from './quizzes/quizzes';
 import Homepage from './homepage/homepage';
 import '../App.css';
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
 
 
 
