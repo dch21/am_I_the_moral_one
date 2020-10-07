@@ -54,7 +54,14 @@ class SignupForm extends React.Component {
             ethnicity: this.state.ethnicity
         };
 
-        this.props.signup(user, this.props.history);
+        
+        this.props.signup(user, this.props.history).then(
+            user =>{
+            if(user.type != 'RECEIVE_SESSION_ERRORS'){
+            this.props.login({ email: this.state.email, password: this.state.password })}}
+            ); 
+            
+       
     }
 
     renderErrors() {
@@ -141,7 +148,7 @@ class SignupForm extends React.Component {
                             <option selected disabled>Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Non-Bianary">Non-Bianary</option>
+                            <option value="non binary">Non-Binary</option>
                             <option value="Other">Other</option>
                             <option value="Prefer not to self id">Prefer not to self id</option>
                         </select>
@@ -150,8 +157,9 @@ class SignupForm extends React.Component {
                         onChange={this.update('location')}
                         >
                             <option selected disabled>Location</option>
-                            <option value="city">city</option>
-                            <option value="country">country</option>
+                            <option value="Urban">Urban</option>
+                            <option value="Suburban">Suburban</option>
+                            <option value="Rural">Rural</option>
                         </select>
 
                         <select 
