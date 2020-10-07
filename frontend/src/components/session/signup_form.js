@@ -57,7 +57,8 @@ class SignupForm extends React.Component {
         
         this.props.signup(user, this.props.history).then(
             user =>{
-            this.props.login({ email: this.state.email, password: this.state.password })}
+            if(user.type != 'RECEIVE_SESSION_ERRORS'){
+            this.props.login({ email: this.state.email, password: this.state.password })}}
             ); 
             
        
@@ -147,7 +148,7 @@ class SignupForm extends React.Component {
                             <option selected disabled>Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Non-Bianary">Non-Bianary</option>
+                            <option value="non binary">Non-Binary</option>
                             <option value="Other">Other</option>
                             <option value="Prefer not to self id">Prefer not to self id</option>
                         </select>

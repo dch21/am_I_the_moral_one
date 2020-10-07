@@ -1,5 +1,4 @@
 import React from "react";
-import hands from '../images/hands.jpg'
 import homepageCSS from './homepage.scss'
 
 class Homepage extends React.Component {
@@ -7,7 +6,6 @@ class Homepage extends React.Component {
     render() {
         return (
             <div className="splash-div">
-                {/* <img className="hands-img" src={hands}></img> */}
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Quizzes taken:</h1>
                     <div className="quizzes-taken-links">
