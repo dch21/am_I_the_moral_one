@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the quiz route" }));
 
-
+//  This would get the data for a specific Question NOT a quiz
 router.get("/:id", (req, res) => {
   Quiz.findById(req.params.id)
     .then((quiz) => res.json(quiz))
@@ -41,22 +41,8 @@ router.patch("/update/:id", (req, res) => {
   });
 });
 
-// router.patch("/inc/:id", (req, res) => {
-//     filter =  { _id: req.params.id, quizNum: req.body.quizNum, "question.text": req.body.text };
-//     update =  {  "question.questionChoices.choiceA.demo.age.65+" : 1  };
-//     Quiz.findOneAndUpdate( filter, update, function(
-//     err,
-//     result
-//   ) {
-//     if (err) {
-//       res.send(err);
-//     } else {
-//       res.send(result);
-//     }
-//   });
-// });
 
-            
+         
         
 router.post("/createQuiz", (req, res) => {
     const newQuiz = new Quiz({
