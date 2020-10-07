@@ -10,7 +10,6 @@ class NavBar extends React.Component {
     }
 
     logoutUser(e) {
-        debugger
         e.preventDefault();
         this.props.logout();
     }
@@ -19,8 +18,7 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <button onClick={this.logoutUser}>Logout</button>
-                    <Link to={'/quizzes'}>See new quizzes</Link>
+                    <button onClick={this.logoutUser} className="logout-button">Logout</button>
                 </div>
             );
         } else {

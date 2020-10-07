@@ -10,7 +10,7 @@ const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
 
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
@@ -20,6 +20,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 });
 
 router.post("/login", (req, res) => {
+    
     const { errors, isValid } = validateLoginInput(req.body);
 
     if (!isValid) {
