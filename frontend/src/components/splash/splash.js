@@ -1,5 +1,5 @@
 import React from "react";
-import splashCSS from './spash.css'
+import  './spash.css'
 
 class Splash extends React.Component {
 

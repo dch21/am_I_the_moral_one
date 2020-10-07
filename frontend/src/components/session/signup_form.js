@@ -24,7 +24,7 @@ class SignupForm extends React.Component {
         this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
             this.props.history.push('/login');
         }
@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
         
         this.props.signup(user, this.props.history).then(
             user =>{
-            if(user.type != 'RECEIVE_SESSION_ERRORS'){
+            if(user.type !== 'RECEIVE_SESSION_ERRORS'){
             this.props.login({ email: this.state.email, password: this.state.password })}}
             ); 
             
@@ -100,16 +100,16 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         
-                        <select name = 'education' placeholder="Highest Level of Education" onChange={this.update('education')}>
-                            <option  selected disabled>Education</option>
+                        <select defaultValue= "Education" name = 'education' placeholder="Highest Level of Education" onChange={this.update('education')}>
+                            <option disabled>Education</option>
                             <option value="highschool or lower">highschool or lower</option>
                             <option value="undergraduate degree">undergraduate degree</option>
                             <option value="masters/professional degree">masters/professional degree</option>
                             <option value="PhD">PhD</option>
                         </select>
                         
-                        <select name='age' onChange={this.update('age')}>
-                            <option selected disabled>Age Range</option>
+                        <select defaultValue="Age Range" name='age' onChange={this.update('age')}>
+                            <option disabled>Age Range</option>
 
                             <option value="under 18">under 18</option>
                             <option value="18 to 22">18 to 22</option>
@@ -118,8 +118,8 @@ class SignupForm extends React.Component {
                             <option value="60 plus">60 plus</option>
                         </select>
 
-                        <select name='politicalLeaning' onChange={this.update('politicalLeaning')}>
-                            <option selected disabled>Political Leaning</option>
+                        <select defaultValue="Political Leaning" name='politicalLeaning' onChange={this.update('politicalLeaning')}>
+                            <option disabled>Political Leaning</option>
                             <option value="Far-left">Far-left</option>
                             <option value="Moderate-left">Moderate-left</option>
                             <option value="Centrist">Centrist</option>
@@ -127,10 +127,10 @@ class SignupForm extends React.Component {
                             <option value="Far-right">Far-right</option>
                         </select>
 
-                        <select
+                        <select defaultValue="Religious Affiliation"
                             onChange={this.update('religiousAffiliation')}
                         >
-                            <option selected disabled>Religious Affiliation</option>
+                            <option disabled>Religious Affiliation</option>
                             <option value="Christianity">Christianity</option>
                             <option value="Islam">Islam</option>
                             <option value="Judaism">Judaism</option>
@@ -142,10 +142,10 @@ class SignupForm extends React.Component {
                             <option value="Prefer not to self id">Prefer not to self id</option>
                         </select>
 
-                        <select
+                        <select defaultValue="Gender"
                             onChange={this.update('gender')}
                         >
-                            <option selected disabled>Gender</option>
+                            <option disabled>Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="non binary">Non-Binary</option>
@@ -153,26 +153,26 @@ class SignupForm extends React.Component {
                             <option value="Prefer not to self id">Prefer not to self id</option>
                         </select>
 
-                        <select 
+                        <select defaultValue="Location"
                         onChange={this.update('location')}
                         >
-                            <option selected disabled>Location</option>
+                            <option disabled>Location</option>
                             <option value="Urban">Urban</option>
                             <option value="Suburban">Suburban</option>
                             <option value="Rural">Rural</option>
                         </select>
 
-                        <select 
+                        <select defaultValue="Pet Choice"
                             onChange={this.update('petChoice')}
                         >
-                            <option selected disabled>Pet Choice </option>
+                            <option disabled>Pet Choice </option>
                             <option value="dog">dog</option>
                             <option value="cat">cat</option>
                         </select>
 
                         <select
-                        onChange={this.update('ethnicity')}>
-                            <option selected disabled >Ethnicity</option>
+                        onChange={this.update('ethnicity')} defaultValue="Ethnicity">
+                            <option disabled >Ethnicity</option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Non-White Hispanic">Hispanic</option>

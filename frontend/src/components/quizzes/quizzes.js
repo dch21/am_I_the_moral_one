@@ -1,5 +1,5 @@
 import React from "react";
-import quizzesCSS from './quizzes.scss'
+import './quizzes.scss'
 import QuizForm from '../quiz_form/quiz_form'
 class NewQuizzes extends React.Component {
 
