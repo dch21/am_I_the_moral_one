@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
 
 
 router.patch("/update/:id", (req, res) => {
-    filter =  { _id: req.params.id, quizNum: req.body.quizNum, "question.text": req.body.text };
+    filter =  { _id: req.params.id, quizNum: req.body.quizNum };
     update =  {  $inc: {[`question.questionChoices.${req.body.choice}.demo.age.${req.body.age}` ]: 1,
      [`question.questionChoices.${req.body.choice}.demo.education.${req.body.education}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.politicalLeaning.${req.body.politicalLeaning}`]: 1,
@@ -48,8 +48,10 @@ router.post("/createQuiz", (req, res) => {
     const newQuiz = new Quiz({
       _id: req.body.id,
       quizNum: req.body.quizNum,
-    //   questionNum: req.body.questionNum,
+      //   questionNum: req.body.questionNum,
       "question.text": req.body.text,
+      "question.choiceAText": req.body.choiceAText,
+      "question.choiceBText": req.body.choiceBText,
     });
     newQuiz.save().then((quiz) => res.json(quiz));
 });
