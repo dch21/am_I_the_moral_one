@@ -9,6 +9,10 @@ import QuizForm from '../components/quiz_form/quiz_form';
 import NewQuizzes from './quizzes/quizzes';
 import Homepage from './homepage/homepage';
 import '../App.css';
+const express = require("express");
+const app = express();
+
+
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
@@ -23,7 +27,6 @@ const App = () => (
     <div>
         <NavBar/> 
         <Switch>
-            {/* <ProtectedRoute path='/quizzes' component={QuizForm}></ProtectedRoute> */}
             <AuthRoute exact path="/signup" component={SignInContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/" component={Splash} />
