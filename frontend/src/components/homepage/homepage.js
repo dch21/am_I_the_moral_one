@@ -54,7 +54,7 @@ class Homepage extends React.Component {
                 <div className="main-data-div">
                     <h1 className="data-header">Data:</h1>
                     <div className="inner-data-box">
-                     
+                     {/* <DataVis/> */}
                     </div>
                 </div>
 

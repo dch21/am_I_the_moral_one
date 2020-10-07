@@ -1,17 +1,17 @@
-// import React from 'react';
-// import { Chart } from 'regraph';
+import React from 'react';
+import { Chart } from 'recharts';
 
-// const DataVis = () => (
-//     <Chart items={{
-//         luke: { label: { text: 'Luke Skywalker' } },
-//         leia: { label: { text: 'Princess Leia' } },
-//         link: {
-//             id1: 'luke',
-//             id2: 'leia',
-//             label: { text: 'Siblings' },
-//         }
-//     }} />
-// );
+const DataVis = () => (
+    <Chart items={{
+        luke: { label: { text: 'Luke Skywalker' } },
+        leia: { label: { text: 'Princess Leia' } },
+        link: {
+            id1: 'luke',
+            id2: 'leia',
+            label: { text: 'Siblings' },
+        }
+    }} />
+);
 
-// export default DataVis; 
+export default DataVis; 
 
