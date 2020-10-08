@@ -8,6 +8,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the quiz route" }));
 
 //  This would get the data for a specific Question NOT a quiz
 router.get("/:id", (req, res) => {
+  // console.log("hit get question")
   Quiz.findById(req.params.id)
     .then((quiz) => res.json(quiz))
     .catch((err) =>
@@ -19,15 +20,21 @@ router.get("/:id", (req, res) => {
 
 
 router.patch("/update/:id", (req, res) => {
-    filter =  { _id: req.params.id, quizNum: req.body.quizNum };
-    update =  {  $inc: {[`question.questionChoices.${req.body.choice}.demo.age.${req.body.age}` ]: 1,
+  console.log("params id is " + req.params.id);
+  console.log("quizNum is is" + req.body.quizNum);
+  console.log("choice is" + req.body.choice);
+    filter =  { _id: req.params.id , quizNum: req.body.quizNum };
+    update =  {  $inc: {
+      [`question.questionChoices.${req.body.choice}.demo.age.${req.body.age}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.education.${req.body.education}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.politicalLeaning.${req.body.politicalLeaning}`]: 1,
-     [`question.questionChoices.${req.body.choice}.demo.religiousAffiliation.${req.body.religiousAffiliation}`]: 1,
+     [`question.questionChoices.${req.body.choice}.demo.religiousAffilation.${req.body.religiousAffilation}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.gender.${req.body.gender}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.petChoice.${req.body.petChoice}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.ethnicity.${req.body.ethnicity}`]: 1,
-     [`question.questionChoices.${req.body.choice}.demo.location.${req.body.location}`]: 1,} };
+     [`question.questionChoices.${req.body.choice}.demo.location.${req.body.location}`]: 1,
+    }
+     };
 
     Quiz.findOneAndUpdate( filter, update, function(
     err,
@@ -47,6 +54,7 @@ router.patch("/update/:id", (req, res) => {
 router.post("/createQuiz", (req, res) => {
     const newQuiz = new Quiz({
       _id: req.body.id,
+
       quizNum: req.body.quizNum,
       //   questionNum: req.body.questionNum,
       "question.text": req.body.text,
@@ -57,6 +65,4 @@ router.post("/createQuiz", (req, res) => {
 });
 
 
-
-  
 module.exports = router;

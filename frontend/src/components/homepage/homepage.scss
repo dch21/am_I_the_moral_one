@@ -44,7 +44,7 @@
 }
 
 .main-data-div {
-    width: 65%;
+    width: 77%;
 }
 
 .questions-answered-list, .quizzes-taken-links {
@@ -70,4 +70,27 @@
     border-radius: 10px;
     background-color: white;
     margin: auto;
+    display: flex;
 }
+
+.quizzes-taken-links > div:hover {
+    color: navy;
+    cursor: pointer;
+}
+
+.data-charts {
+    display: flex;
+    min-width: 1200px;
+    min-height: 700px;
+    flex-wrap: wrap;
+}
+
+.recharts-surface{
+
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
