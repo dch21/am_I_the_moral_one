@@ -1,20 +1,18 @@
 import { connect } from 'react-redux';
-import Results from './results'
-
-import { fetchQuestionData } from '../../actions/quiz_actions'
+import ResultsPage from './results'
+import { fetchAllQuestionsFromAQuiz } from '../../actions/quiz_actions'
+// import { fetchQuestionData } from '../../actions/quiz_actions'
 
 const mSTP = state => {
-    // debugger
     return {
-        questionIDs: state.quizzes
-        // .data.question.questionChoices.choiceA.demo
+        allPromptTexts: state.prompts
     };
 }
 
 const mDTP = (dispatch) => {
     return {
-        fetchQuestionData: questionId => dispatch(fetchQuestionData(questionId))
+        fetchAllQuestionsFromAQuiz: promptId => dispatch(fetchAllQuestionsFromAQuiz(promptId))
     }
 }
 
-export default connect(mSTP, mDTP)(MainPieChart);
+export default connect(mSTP, mDTP)(ResultsPage);

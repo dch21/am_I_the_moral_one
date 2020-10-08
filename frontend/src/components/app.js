@@ -9,7 +9,7 @@ import Splash from './splash/splash';
 import NewQuizzes from './quizzes/quizzes';
 import Homepage from './homepage/homepage';
 import '../App.css';
-import ResultsPage from "./results/results"
+import ResultsPage from "./results/results_container"
 
 
 

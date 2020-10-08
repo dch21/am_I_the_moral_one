@@ -2,11 +2,17 @@ import * as APIUtil from '../util/quiz_api_util';
 
 
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION'; 
+export const RECEIVE_ALL_QUESTIONS_FROM_A_QUIZ = 'RECEIVE_ALL_QUESTIONS_FROM_A_QUIZ';
 
  const receiveQuestion = question => ({
     type: RECEIVE_QUESTION, 
     question
 
+})
+
+const receiveAllQuestionsFromAQuiz = prompts => ({
+    type: RECEIVE_ALL_QUESTIONS_FROM_A_QUIZ,
+    prompts
 })
 
 export const fetchQuestion = questionId => dispatch =>  {
@@ -16,6 +22,12 @@ export const fetchQuestion = questionId => dispatch =>  {
         )
 }
 
+
+export const fetchAllQuestionsFromAQuiz = promptId => dispatch => (
+    APIUtil.fetchAllQuestionsFromAQuiz(promptId)
+    .then(prompt => dispatch(receiveAllQuestionsFromAQuiz(prompt)))
+    .catch(err => console.log(err))
+)
 
 
 // export const RECEIVE_QUIZ_RESPONSE = 'RECEIVE_QUIZ_RESPONSE'; 
