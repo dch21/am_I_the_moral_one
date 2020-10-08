@@ -31,25 +31,16 @@ class ResultsPage extends React.Component {
 
     render() {
         // debugger
-
+        const texts = this.props.allPromptTexts;
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]    
         return (
             <div className="splash-div">
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Questions</h1>
                     <div className="quizzes-taken-links">
-                        {/* <Link to={`/results/${results.id}`} key={results.id}></Link> */}
-
-                        <div onClick={() => this.handleClick(1)}>1</div>
-                        <div onClick={() => this.handleClick(2)}>2</div>
-                        <div onClick={() => this.handleClick(3)}>3</div>
-                        <div onClick={() => this.handleClick(4)}>4</div>
-                        <div onClick={() => this.handleClick(5)}>5</div>
-                        <div onClick={() => this.handleClick(6)}>6</div>
-                        <div onClick={() => this.handleClick(7)}>7</div>
-                        <div onClick={() => this.handleClick(8)}>8</div>
-                        <div onClick={() => this.handleClick(9)}>9</div>
-                        <div onClick={() => this.handleClick(10)}>10</div>
+                        {texts.map ( (text, i) => (
+                            <div onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</div>
+                        ))}
                     </div>
                 </div>
                
