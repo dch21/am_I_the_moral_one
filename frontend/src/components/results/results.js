@@ -15,6 +15,10 @@ class ResultsPage extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchAllQuestionsFromAQuiz(1)
+    }
+
     handleClick(field) {
         
         // field.preventDefault()
@@ -29,7 +33,6 @@ class ResultsPage extends React.Component {
         // debugger
 
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]    
-
         return (
             <div className="splash-div">
                 <div className="quizzes-taken-directory">

@@ -7,6 +7,7 @@ const passport = require('passport');
 
 const users = require("./routes/api/users");
 const quizzes = require("./routes/api/quizzes");
+const prompts = require("./routes/api/prompts");
 
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
@@ -33,6 +34,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/quizzes", quizzes);
+app.use("/api/prompts", prompts);
 
 
 const port = process.env.PORT || 5000;

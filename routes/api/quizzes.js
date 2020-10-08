@@ -54,6 +54,7 @@ router.patch("/update/:id", (req, res) => {
 router.post("/createQuiz", (req, res) => {
     const newQuiz = new Quiz({
       _id: req.body.id,
+
       quizNum: req.body.quizNum,
       //   questionNum: req.body.questionNum,
       "question.text": req.body.text,
@@ -64,6 +65,4 @@ router.post("/createQuiz", (req, res) => {
 });
 
 
-
-  
 module.exports = router;
