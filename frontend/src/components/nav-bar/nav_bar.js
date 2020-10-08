@@ -9,6 +9,11 @@ class NavBar extends React.Component {
         this.getLinks = this.getLinks.bind(this);
     }
 
+    handleClick(){
+        const demoUser = {email: 'bob@gmail.com', password: 'password'}; 
+        this.props.login(demoUser);
+    }
+
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
@@ -27,6 +32,8 @@ class NavBar extends React.Component {
                     <Link to={'/signup'}>Signup</Link>
                     <br></br>
                     <Link to={'/login'}>Login</Link>
+                    <br></br>
+                    <a className="demo-button" onClick={() => this.handleClick()}>Demo</a>
                 </div>
             );
         }

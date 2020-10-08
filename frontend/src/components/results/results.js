@@ -22,7 +22,6 @@ class ResultsPage extends React.Component {
             questionNumber: field
         })
         console.log(this.state)
-        // debugger
     }
 
     render() {

@@ -24,7 +24,7 @@ class NewQuizzes extends React.Component {
             <div className="quizzes-page-div">
                 <div className="new-quizzes-div">
                     {/* <img className="hands-img" src={hands}></img> */}
-                    <div className="new-quizzes-directory">
+                    {/* <div className="new-quizzes-directory">
                         <h1 className="new-quizzes-header">New quizzes:</h1>
                         <div className="new-quizzes-links">
                             <div onClick={() => this.handleClick(1)}>Quiz Title 1</div>
@@ -45,10 +45,10 @@ class NewQuizzes extends React.Component {
                             <div>Quiz Title 16</div>
                             <div>Quiz Title 17</div> 
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="quiz-form-box">
-                        <h1 className="quiz-form-header">(Quiz Title:)</h1>
+                        <h1 className="quiz-form-header">Morality Quiz</h1>
                         <div className="quiz-form">
                             <QuizFormContainer quiz={this.state.quiz}></QuizFormContainer>
                         </div>
