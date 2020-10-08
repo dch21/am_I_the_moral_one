@@ -1,16 +1,32 @@
 import React from 'react'; 
 
 class QuizItem extends React.Component{
+    constructor(props){
+        super(props); 
+        this.state = {
+            KlassA: "quiz-question-a",
+            KlassB: 'quiz-question-b'
+        }
+    }
     handleClickA(){
         this.props.functions[this.props.question._id -1] = 'choiceA'; 
-        console.log(this.props.functions); 
+        if(this.state.KlassA === 'quiz-question-a'){
+            this.setState({KlassA: "select-a", KlassB: 'quiz-question-b'})} else {
+                this.setState({KlassA: 'quiz-question-a'})
+            }
+        
+
     }
     handleClickB() {
         this.props.functions[this.props.question._id - 1] = 'choiceB';
-        console.log(this.props.functions);
+        if(this.state.KlassB === 'quiz-question-b'){
+            this.setState({KlassB: "select-b", KlassA: 'quiz-question-a' })} else {
+                this.setState({KlassB: 'quiz-question-b'})
+            }
     }
     render(){
-      
+    
+
         const {question, user, functions} = this.props; 
         const innerQ = question.question
         if(!innerQ) return null; 
@@ -25,7 +41,7 @@ class QuizItem extends React.Component{
                     <input 
                         
                         type="button"
-                        className="quiz-button-a"
+                        className={this.state.KlassA}
                         name={question._id}
                         id="answerChoiceA"
                         value={innerQ.choiceAText}
@@ -37,7 +53,7 @@ class QuizItem extends React.Component{
                 
                 
                 <input type="button"
-                        className="quiz-button-b"
+                        className={this.state.KlassB}
                         name={question._id}
                         id="answerChoiceB"
                         value={innerQ.choiceBText}
