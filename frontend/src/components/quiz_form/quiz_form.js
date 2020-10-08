@@ -1,5 +1,5 @@
 import React from 'react'; 
-import './quiz_form.css'; 
+import './quiz_form.scss'; 
 import QuizItem from './quiz_item'; 
 class QuizForm extends React.Component{
     constructor(props){
@@ -26,6 +26,7 @@ class QuizForm extends React.Component{
             console.log(choice)
             this.props.updateQuizQuestion((idx + 1), 1, choice, user.age, user.education, user.politicalLeaning, user.religiousAffilation, user.gender, user.ethnicity, user.petChoice, user.location)
         })
+        this.props.history.push('/results')
            
     }
     
@@ -91,7 +92,9 @@ return(
         <QuizItem question={q8} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
         <QuizItem question={q9} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions} /> 
         <QuizItem question={q10} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
-        <button onClick={() => this.handleClick()}>Submit</button>
+        <div className="quiz-submit-div">
+        <button className="quiz-submit" onClick={() => this.handleClick()}>Submit</button>
+        </div>
     </div>
 )
         

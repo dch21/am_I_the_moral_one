@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import QuizForm from './quiz_form'
 import { fetchQuestion} from '../../actions/quiz_actions'; 
 import {updateQuizQuestion}  from '../../util/quiz_api_util';
+import {withRouter} from 'react-router-dom'; 
 
  const mSTP = (state, ownProps) => ({
      user: state.session.user,
@@ -24,4 +25,4 @@ import {updateQuizQuestion}  from '../../util/quiz_api_util';
      updateQuizQuestion: (choice, quizNum, questionId, age, Education, PoliticalLeaning, ReligiousAffilation, Gender, Ethnicity, PetChoice, location) => (updateQuizQuestion(choice, quizNum, questionId, age, Education, PoliticalLeaning, ReligiousAffilation, Gender, Ethnicity, PetChoice, location))
  })
 
- export default connect(mSTP, mDTP)(QuizForm); 
+ export default withRouter(connect(mSTP, mDTP)(QuizForm)); 

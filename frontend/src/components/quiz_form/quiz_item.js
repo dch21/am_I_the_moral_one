@@ -10,32 +10,42 @@ class QuizItem extends React.Component{
         console.log(this.props.functions);
     }
     render(){
+      
         const {question, user, functions} = this.props; 
         const innerQ = question.question
         if(!innerQ) return null; 
+        debugger
+        console.log(innerQ.choiceBText)  
         return(
-            <div>
+            <div className="question-item">
+                <div className='question-title'>{'Question' + " " + question._id}</div>
                 <div>{innerQ.text}</div>
-                <label> {innerQ.ChoiceAText}
-                <input type="radio"
+                <div className="question-buttons">
+                    
+                    <input 
+                        
+                        type="button"
+                        className="quiz-button-a"
                         name={question._id}
                         id="answerChoiceA"
-                        value="ChoiceA"
+                        value={innerQ.choiceAText}
                         // onClick={() => functions[question._id - 1] = this.props.action(question._id, question.quizNum, "choiceA", user.age, user.education, user.politicalLeaning, user.religiousAffilation, user.gender, user.ethnicity, user.petChoice, user.location)}
                         onClick={() => this.handleClickA()}
                     >
                     </input>
-                </label>
-                <label> {innerQ.ChoiceBText}
-                <input type="radio"
+                   
+                
+                
+                <input type="button"
+                        className="quiz-button-b"
                         name={question._id}
                         id="answerChoiceB"
-                        value="ChoiceB"
+                        value={innerQ.choiceBText}
                         // onClick={() => functions[question._id - 1] = this.props.action(question._id, question.quizNum, "choiceB", user.age, user.education, user.politicalLeaning, user.religiousAffilation, user.gender, user.ethnicity, user.petChoice, user.location)}
                         onClick={() => this.handleClickB()}
                         >
                     </input>
-                </label>
+                </div>
             </div>
         )
     }
