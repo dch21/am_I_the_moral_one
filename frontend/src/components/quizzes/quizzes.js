@@ -48,7 +48,7 @@ class NewQuizzes extends React.Component {
                     </div>
 
                     <div className="quiz-form-box">
-                        <h1 className="quiz-form-header">Quiz Title:</h1>
+                        <h1 className="quiz-form-header">(Quiz Title:)</h1>
                         <div className="quiz-form">
                             <QuizForm quiz={this.state.quiz}></QuizForm>
                         </div>

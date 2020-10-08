@@ -1,7 +1,25 @@
 import React from "react";
 import './homepage.scss'
+import QuizForm from '../quiz_form/quiz_form'
+import MainPieChart from './piechart_container'
 // import DataVis from './data_vis'; 
 class Homepage extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quiz: 1
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(field) {
+
+        this.setState({
+            quiz: field
+        })
+    }
 
     render() {
         return (
@@ -9,9 +27,9 @@ class Homepage extends React.Component {
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Quizzes taken:</h1>
                     <div className="quizzes-taken-links">
-                        <div>Quiz Title 1</div>
-                        <div>Quiz Title 2</div>
-                        <div>Quiz Title 3</div>
+                        <div onClick={() => this.handleClick(1)}>Quiz Title 1</div>
+                        <div onClick={() => this.handleClick(2)}>Quiz Title 2</div>
+                        <div onClick={() => this.handleClick(3)}>Quiz Title 3</div>
                         <div>Quiz Title 4</div>
                         <div>Quiz Title 5</div>
                         <div>Quiz Title 6</div>
@@ -32,7 +50,7 @@ class Homepage extends React.Component {
                 <div className="questions-answered-box">
                     <h1 className="questions-answered-header">(Selected Quiz):</h1>
                     <div className="questions-answered-list">
-                        <div>Question 1</div>
+                        {/* <div>Question 1</div>
                         <div>Question 2</div>
                         <div>Question 3</div>
                         <div>Question 4</div>
@@ -48,13 +66,14 @@ class Homepage extends React.Component {
                         <div>Question 14</div>
                         <div>Question 15</div>
                         <div>Question 16</div>
-                        <div>Question 17</div>
+                        <div>Question 17</div> */}
+                        <QuizForm quiz={this.state.quiz}></QuizForm>
                     </div>
                 </div>
                 <div className="main-data-div">
                     <h1 className="data-header">Data:</h1>
                     <div className="inner-data-box">
-                     {/* <DataVis/> */}
+                        <MainPieChart />
                     </div>
                 </div>
 
