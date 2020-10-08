@@ -6,7 +6,9 @@ const QuizSchema = new Schema(
     _id: Number,
     quizNum: Number,
     question: {
-            text: String, 
+            text: String,
+            choiceAText: String,
+            choiceBText: String, 
             questionChoices: 
                 {
                 choiceA: {

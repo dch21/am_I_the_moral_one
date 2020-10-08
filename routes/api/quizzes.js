@@ -55,8 +55,10 @@ router.post("/createQuiz", (req, res) => {
     const newQuiz = new Quiz({
       _id: req.body.id,
       quizNum: req.body.quizNum,
-    //   questionNum: req.body.questionNum,
+      //   questionNum: req.body.questionNum,
       "question.text": req.body.text,
+      "question.choiceAText": req.body.choiceAText,
+      "question.choiceBText": req.body.choiceBText,
     });
     newQuiz.save().then((quiz) => res.json(quiz));
 });
