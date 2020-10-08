@@ -41,7 +41,6 @@ export default class MainPieChart extends PureComponent {
         const [age, ethnicity, gender, location, petChoice, religiousAffilation, politicalLeaning, education] = this.props.demo
 
         const targetDemo = this.state.demo
-
         if (!this.props.questionData.data) {
             return null
         }
