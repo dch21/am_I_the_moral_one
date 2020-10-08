@@ -8,7 +8,8 @@ import configureStore from './store/store';
 
 import jwt_decode from 'jwt-decode';
 
-import { setAuthToken } from './util/session_api_util';
+import { setAuthToken } from './util/session_api_util'; 
+import { fetchQuestion } from './util/quiz_api_util'; 
 
 import { logout } from './actions/session_actions';
 
@@ -33,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore({});
   }
+  window.getState = fetchQuestion
+  window.dispatch = store.dispatch;
+  window.fetchQuestion = fetchQuestion
+
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store} />, root);
