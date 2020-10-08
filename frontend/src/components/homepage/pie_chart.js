@@ -37,7 +37,6 @@ export default class MainPieChart extends PureComponent {
 
 
     render() {
-        // debugger
         const [age, ethnicity, gender, location, petChoice, religiousAffilation, politicalLeaning, education] = this.props.demo
 
         const targetDemo = this.state.demo

@@ -29,7 +29,6 @@ class ResultsPage extends React.Component {
     }
 
     render() {
-        // debugger
         const texts = this.props.allPromptTexts;
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]    
         return (
