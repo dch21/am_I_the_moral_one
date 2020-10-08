@@ -19,8 +19,9 @@ import ResultsPage from "./results/results"
 const App = () => (
     <div>
         <NavBar/> 
-            <Route exact path="/results" component={ResultsPage} />
+        <Route exact path="/results/" component={ResultsPage} />
         <Switch>
+            {/* <Route exact path="/results/:resultsId" component={ResultsPage} /> */}
             <AuthRoute exact path="/signup" component={SignInContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/" component={Splash} />
