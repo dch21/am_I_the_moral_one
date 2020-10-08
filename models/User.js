@@ -22,7 +22,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-      religiousAffiliation: {
+      religiousAffilation: {
         type: String,
         required: true
     },
@@ -38,6 +38,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    takenQuizzes: {
+      type: Array, 
+      default: []
+      },
     ethnicity: {
         type: String,
         required: true

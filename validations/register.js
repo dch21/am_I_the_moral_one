@@ -40,8 +40,8 @@ module.exports = function validateRegisterInput(data) {
     errors.politicalLeaning = "Political Leaning field is necessary";
   }
 
-  if (Validator.isEmpty(data.religiousAffiliation)) {
-    errors.religiousAffiliation = "Religious Affiliation field is necessary";
+  if (Validator.isEmpty(data.religiousAffilation)) {
+    errors.religiousAffilation = "Religious Affilation field is necessary";
   }
 
   if (Validator.isEmpty(data.gender)) {

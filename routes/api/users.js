@@ -15,12 +15,20 @@ const validateLoginInput = require('../../validations/login');
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
         id: req.user.id,
-        email: req.user.email
+        email: req.user.email,
+        education:  req.user.education,
+        age:  req.user.age,
+        politicalLeaning:  req.user.politicalLeaning,
+        religiousAffilation: req.user.religiousAffilation,
+        gender:  req.user.gender,
+        location:  req.user.location,
+        petChoice: req.user.petChoice,
+        ethnicity: req.user.ethnicity
     });
 });
 
 router.post("/login", (req, res) => {
-    
+    console.log('hit login')
     const { errors, isValid } = validateLoginInput(req.body);
 
     if (!isValid) {
@@ -38,7 +46,17 @@ router.post("/login", (req, res) => {
 
         bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) {
-                const payload = { id: user.id, email: user.email };
+                const payload = { id: user.id,
+                                email: user.email,
+                                education: user.education,
+                                age: user.age,
+                                politicalLeaning: user.politicalLeaning,
+                                religiousAffilation: user.religiousAffilation,
+                                gender: user.gender,
+                                location: user.location,
+                                petChoice: user.petChoice,
+                              ethnicity: user.ethnicity
+                     };
 
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                     res.json({
@@ -57,11 +75,10 @@ router.post("/login", (req, res) => {
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
-
+    console.log("register 1");
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
@@ -73,14 +90,14 @@ router.post('/register', (req, res) => {
                     education: req.body.education,
                     age: req.body.age,
                     politicalLeaning: req.body.politicalLeaning,
-                    religiousAffiliation: req.body.religiousAffiliation, 
+                    religiousAffilation: req.body.religiousAffilation, 
                     gender: req.body.gender,
                     ethnicity: req.body.ethnicity, 
                     location: req.body.location, 
                     petChoice: req.body.petChoice
                
                 })
-             
+                console.log('register 2') 
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
@@ -92,6 +109,7 @@ router.post('/register', (req, res) => {
                 })
             }
         });
+        console.log("register 3");
 });
 
 module.exports = router;

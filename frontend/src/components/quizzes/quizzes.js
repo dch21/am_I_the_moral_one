@@ -1,6 +1,6 @@
 import React from "react";
 import './quizzes.scss'
-import QuizForm from '../quiz_form/quiz_form'
+import QuizFormContainer from '../quiz_form/quiz_form_container'; 
 class NewQuizzes extends React.Component {
 
     constructor(props){
@@ -50,10 +50,9 @@ class NewQuizzes extends React.Component {
                     <div className="quiz-form-box">
                         <h1 className="quiz-form-header">(Quiz Title:)</h1>
                         <div className="quiz-form">
-                            <QuizForm quiz={this.state.quiz}></QuizForm>
+                            <QuizFormContainer quiz={this.state.quiz}></QuizFormContainer>
                         </div>
                     </div>
-
                 </div>
             </div>
         )
