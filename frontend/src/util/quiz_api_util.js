@@ -43,3 +43,7 @@ export const submitQuiz = (userData) => {
 export const fetchQuestion = (id) => {
     return axios.get(`/api/quizzes/${id}`)
 }
+
+export const fetchQuestions = () => {
+    return axios.get(`/api/quizzes`)
+}

@@ -44,7 +44,7 @@
 }
 
 .main-data-div {
-    width: 65%;
+    width: 77%;
 }
 
 .questions-answered-list, .quizzes-taken-links {
@@ -88,3 +88,9 @@
 .recharts-surface{
 
 }
+
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
