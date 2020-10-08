@@ -22,7 +22,6 @@ export default class MainPieChart extends PureComponent {
         if (!this.props.questionData.data) {
             return null;
         }
-        // debugger
         const questionText = this.props.questionData.data.question.text
         const choiceAtext = this.props.questionData.data.question.choiceAText
         const choiceBtext = this.props.questionData.data.question.choiceBText

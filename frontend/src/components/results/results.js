@@ -21,11 +21,9 @@ class ResultsPage extends React.Component {
             questionNumber: field
         })
         console.log(this.state)
-        // debugger
     }
 
     render() {
-        // debugger
         return (
             <div className="splash-div">
                 <div className="quizzes-taken-directory">

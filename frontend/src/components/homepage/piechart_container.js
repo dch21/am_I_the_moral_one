@@ -3,7 +3,6 @@ import MainPieChart from './pie_chart';
 import { fetchQuestionData } from '../../actions/quiz_actions'
 
 const mSTP = state => {
-    // debugger
     return {
         questionData: state.quizzes
             // .data.question.questionChoices.choiceA.demo
