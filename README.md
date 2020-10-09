@@ -83,7 +83,7 @@ handleClickA(){
                  {demoGroup1A === undefined ? "" : `sample size: ${demoGroup1A + demoGroup1B}`}</div>
           </div>`
 
-              ```html
+            
                 <PieChart width={200} height={200}>
                     <Pie 
                         data={data}
