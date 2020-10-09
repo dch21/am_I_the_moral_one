@@ -20,9 +20,6 @@ router.get("/:id", (req, res) => {
 
 
 router.patch("/update/:id", (req, res) => {
-  console.log("params id is " + req.params.id);
-  console.log("quizNum is is" + req.body.quizNum);
-  console.log("choice is" + req.body.choice);
     filter =  { _id: req.params.id , quizNum: req.body.quizNum };
     update =  {  $inc: {
       [`question.questionChoices.${req.body.choice}.demo.age.${req.body.age}`]: 1,
