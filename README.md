@@ -1,6 +1,6 @@
 # AmITheMoralOne? 
 
-Am I the Moral One  is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). Currently, our project only tracks data for one quiz, but we hope to allow users to create their own quizzes and upload them to the site.  
+Am I the Moral One  is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). Currently, our project only tracks data for one quiz. However, in the future users will be able to create their own quizzes and upload them to the site.
 
 [Live Demo]( https://amithemoralone.herokuapp.com/#/)
 
@@ -11,7 +11,7 @@ Am I the Moral One's backend uses MongoDB, Node.js and Express, it's frontend us
 
 # Quizzes 
 
-In our database, we stored demographic data with each question answer. The benifit of this was that this data was easily retreviable when it came to our results page, where we visualized answer breakdowns among demographic groups. One downside was that we needed to be creative when it came to creating our quiz form functionality. Essentially, our quiz form stored an object (named functions) representing the user's answers that was updated each time the user selected a button: 
+In our database, we stored demographic data with each question answer. The benefit of this was that this data was easily retrievable. One downside was that we needed to be creative when it came to creating our quiz form functionality. Our quiz form stored an object (named functions) representing the user's answers. We updated that object each time the user selected an answer button: 
 
  ```js
 handleClickA(){
@@ -22,7 +22,7 @@ handleClickA(){
             }
  ```
  
- When the user clicked the form's submit button, we iterated through the funcitons object to send to our backend database with the user's answer choices and demographic info: 
+ When the user clicks the submit button, we send her answers and demographic info to our backend: 
  
  
   ```js
