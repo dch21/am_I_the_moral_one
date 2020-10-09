@@ -40,6 +40,7 @@ handleClickA(){
  Which then update's our database: 
  
  ```js
+ 
  router.patch("/update/:id", (req, res) => {
     filter =  { _id: req.params.id , quizNum: req.body.quizNum };
     update =  {  $inc: {
@@ -76,11 +77,11 @@ handleClickA(){
    
    Here's what it looks like under the hood: 
    
-    ```js
-                            <div className="demo-label-bolded">{labels[0]}</div>
-                            <div className="sample-size-label">
-                                {demoGroup1A === undefined ? "" : `sample size: ${demoGroup1A + demoGroup1B}`}</div>
-                            </div>
+   ```javascript
+       <div className="demo-label-bolded">{labels[0]}</div>
+          <div className="sample-size-label">
+                 {demoGroup1A === undefined ? "" : `sample size: ${demoGroup1A + demoGroup1B}`}</div>
+          </div>`
       
                 <PieChart width={200} height={200}>
                     <Pie 
@@ -98,7 +99,8 @@ handleClickA(){
                         }
                     </Pie>
                 </PieChart>
-       ```
+     ```
+   
             
 
 
