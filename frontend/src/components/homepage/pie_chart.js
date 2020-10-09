@@ -37,7 +37,6 @@ export default class MainPieChart extends PureComponent {
 
 
     render() {
-        // debugger
         const [age, ethnicity, gender, location, petChoice, religiousAffilation, politicalLeaning, education] = this.props.demo
 
         const targetDemo = this.state.demo
@@ -144,6 +143,11 @@ export default class MainPieChart extends PureComponent {
             { name: 'Group B', value: demoGroup9B },
         ];
 
+        const data10 = [
+            { name: 'Group A', value: 0 },
+            { name: 'Group B', value: 0 },
+        ];
+
         const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#bada55',  '#92A0F2'];
 
         const RADIAN = Math.PI / 180;
@@ -161,54 +165,70 @@ export default class MainPieChart extends PureComponent {
             );
         };
 
+        
         return (
             <div className="data-charts">
-                <p className="full-question-text">{questionText}</p>
-                <div className="demo-filters">
-                    <div className="demo-filter-header">Demographic filters:</div>
-                    <div className="filter-buttons">
-                        <button onClick={() => this.handleToggle(age)}>Age</button>
-                        <button onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
-                        <button onClick={() => this.handleToggle(gender)}>Gender</button>
-                        <button onClick={() => this.handleToggle(location)}>Location</button>
-                        <button onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
-                        <button onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
-                        <button onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
-                        <button onClick={() => this.handleToggle(education)}>Education</button>
+                    <div className="header-question-buttons">
+                        <div className="buttons-and-text">
+                        <div className="filter-buttons">
+                            <button className="filter-button-item" onClick={() => this.handleToggle(age)}>Age</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(gender)}>Gender</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(location)}>Location</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(education)}>Education</button>
+                        </div>
+                        <p className="question-text">{questionText}</p>
+                        </div>
+                </div>
+           
+        <div className='pie-graphs'>
+                    <div className="legend">
+                        <div className="choice-text-blue"> {choiceAtext}</div>
+                        <div className="choice-text-green">{choiceBtext}</div>
                     </div>
-                </div>
-                <div className="choice-legend">
-                    <p>Blue:{choiceAtext}</p>
-                    <p>Green:{choiceBtext}</p>
-                </div>
-                
-
-
-                    <p>{labels[0]}</p>
-                    <PieChart width={100} height={100}>
-                        <Pie 
-                            data={data}
-                            cx={50}
-                            cy={50}
-                            labelLine={false}
-                            label={renderCustomizedLabel}
-                            outerRadius={40}
-                            fill="#8884d8"
-                            dataKey="value"
-                        >
-                            {
-                                data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                            }
-                        </Pie>
-                    </PieChart>
-                <PieChart width={100} height={100}>
+            <div className="label-and-pie-div">
+                        <div>
+                            <div className="demo-label-bolded">{labels[0]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup1A === undefined ? "" : `sample size: ${demoGroup1A + demoGroup1B}`}</div>
+                            </div>
+      
+                <PieChart width={200} height={200}>
+                    <Pie 
+                        data={data}
+                        cx={100}
+                        cy={100}
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        outerRadius={80}
+                        fill="#8884d8"
+                        dataKey="value"
+                    >
+                        {
+                            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                        }
+                    </Pie>
+                </PieChart>
+                       
+              
+               
+                        <div>
+                            <div className="demo-label-bolded">{labels[1]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup2A === undefined ? "" : `sample size: ${demoGroup2A + demoGroup2B}`}</div>
+                        </div>
+                        <PieChart width={200} height={200}>
+                    
                     <Pie
                         data={data2}
-                        cx={50}
-                        cy={50}
+                                cx={100}
+                                cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
-                        outerRadius={40}
+                        outerRadius={80}
                         fill="#8884d8"
                         dataKey="value"
                     >
@@ -217,12 +237,20 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-
-                <PieChart width={400} height={400}>
+                </div>
+            
+                <div className="label-and-pie-div">
+                        <div>
+                            <div className="demo-label-bolded">{labels[2]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup3A === undefined ? "" : `sample size: ${demoGroup3A + demoGroup3B}`}</div>
+                        </div>
+           
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data3}
-                        cx={200}
-                        cy={200}
+                                cx={100}
+                                cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -234,12 +262,18 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-
-                <PieChart width={400} height={400}>
+                
+                        <div>
+                            <div className="demo-label-bolded">{labels[3]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup4A === undefined ? "" : `sample size: ${demoGroup4A + demoGroup4B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data4}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -251,12 +285,20 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
-                <PieChart width={400} height={400}>
+                <div className="label-and-pie-div">
+                        <div>
+                            <div className="demo-label-bolded">{labels[4]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup5A === undefined ? "" : `sample size: ${demoGroup5A + demoGroup5B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data5}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -268,13 +310,18 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-
-
-                <PieChart width={400} height={400}>
+              
+                        <div>
+                            <div className="demo-label-bolded">{labels[5]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup6A === undefined ? "" : `sample size: ${demoGroup6A + demoGroup6B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data6}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -286,13 +333,20 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
-
-                <PieChart width={400} height={400}>
+                <div className="label-and-pie-div">
+                        <div>
+                            <div className="demo-label-bolded">{labels[6]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup7A === undefined ? "" : `sample size: ${demoGroup7A + demoGroup7B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data7}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -304,13 +358,19 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                
 
-
-                <PieChart width={400} height={400}>
+                        <div>
+                            <div className="demo-label-bolded">{labels[7]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup8A === undefined ? "" : `sample size: ${demoGroup8A + demoGroup8B}`}
+                            </div>
+                        </div>
+                <PieChart width={200} height={200}>
                     <Pie
                         data={data8}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -321,28 +381,55 @@ export default class MainPieChart extends PureComponent {
                             data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
                         }
                     </Pie>
-                </PieChart>
+                   </PieChart>
+                </div>
+                   
+                <div className="label-and-pie-div">
+                         <div>
+                            <div className="demo-label-bolded">{labels[8]}</div>
+                           
+                            <div className="sample-size-label">
+                                {demoGroup9A === undefined ? "" : `sample size: ${demoGroup9A + demoGroup9B}`}
+                                </div>
+                        </div>
+                        
 
-
-                <PieChart width={400} height={400}>
-                    <Pie
-                        data={data9}
-                        cx={200}
-                        cy={200}
-                        labelLine={false}
-                        label={renderCustomizedLabel}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                    >
-                        {
-                            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                        }
-                    </Pie>
-                </PieChart>
-
-
+                            <PieChart width={200} height={200}>
+                                <Pie
+                                    data={data9}
+                                    cx={100}
+                                    cy={100}
+                                    labelLine={false}
+                                    label={renderCustomizedLabel}
+                                    outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                >
+                                    {
+                                        data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                                    }
+                                </Pie>
+                            </PieChart>
+                        <PieChart width={200} height={200}>
+                            <Pie
+                                data={data10}
+                                cx={100}
+                                cy={100}
+                                labelLine={false}
+                                label={renderCustomizedLabel}
+                                outerRadius={80}
+                                fill="#8884d8"
+                                dataKey="value"
+                            >
+                                {
+                                    data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                                }
+                            </Pie>
+                        </PieChart>
+                    </div>
+                </div>
             </div>
+          
 
         );
     }

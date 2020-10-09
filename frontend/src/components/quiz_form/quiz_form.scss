@@ -98,15 +98,19 @@
     color: white; 
 }
 
-.quiz-button-a:hover{
-    background-color: #196bad;
+.quiz-question-a:hover{
+    background-color: #2196f3 ;
     cursor: pointer;
 }
 
 
 
 
-.quiz-button-b:hover{
-    background-color: #2a8a62;
+.quiz-question-b:hover{
+    background-color: #3dc78e;
     cursor: pointer;
+}
+
+.quiz-form-question-text {
+    line-height: 1.5;
 }

@@ -8,9 +8,8 @@ class ResultsPage extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-            questionNumber: 1
+            questionNumber: 1,
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -20,32 +19,27 @@ class ResultsPage extends React.Component {
     }
 
     handleClick(field) {
-        
-        // field.preventDefault()
         this.setState({
-            questionNumber: field
+            questionNumber: field,
         })
-        console.log(this.state)
     }
 
     render() {
-        // debugger
         const texts = this.props.allPromptTexts;
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]    
         return (
-            <div className="splash-div">
+            <div className="jake-result-master-div">
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Questions</h1>
                     <div className="quizzes-taken-links">
                         {texts.map ( (text, i) => (
-                            <div onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</div>
+                            <button className="question-taken-item" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</button>
                         ))}
                     </div>
                 </div>
                
-                <div className="main-data-div">
-                    <h1 className="data-header">Data:</h1>
-                    <div className="inner-data-box">                     
+                <div className="jake-results-div">
+                    <div className="jakes-data-box">                     
                         <MainPieChart demo={demographicsArray} questionNumber={this.state.questionNumber} />
                     </div>
                 </div>
