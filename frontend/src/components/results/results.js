@@ -8,9 +8,8 @@ class ResultsPage extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-            questionNumber: 1
+            questionNumber: 1,
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -20,12 +19,9 @@ class ResultsPage extends React.Component {
     }
 
     handleClick(field) {
-        
-        // field.preventDefault()
         this.setState({
-            questionNumber: field
+            questionNumber: field,
         })
-        console.log(this.state)
     }
 
     render() {
@@ -37,13 +33,12 @@ class ResultsPage extends React.Component {
                     <h1 className="quizzes-taken-header">Questions</h1>
                     <div className="quizzes-taken-links">
                         {texts.map ( (text, i) => (
-                            <div onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</div>
+                            <button className="question-taken-item" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</button>
                         ))}
                     </div>
                 </div>
                
                 <div className="jake-results-div">
-                    <h1 className="data-header">Data:</h1>
                     <div className="jakes-data-box">                     
                         <MainPieChart demo={demographicsArray} questionNumber={this.state.questionNumber} />
                     </div>

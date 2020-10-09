@@ -139,7 +139,7 @@ class SignupForm extends React.Component {
                             <option value="Islam">Islam</option>
                             <option value="Judaism">Judaism</option>
                             <option value="Hinduism">Hinduism</option>
-                            <option value="Buddahism">Buddahism</option>
+                            <option value="Buddahism">Buddhism</option>
                             <option value="Sikhism">Sikhism</option>
                             <option value="Agnostic">Agnostic</option>
                             <option value="Athiest">Atheism</option>
