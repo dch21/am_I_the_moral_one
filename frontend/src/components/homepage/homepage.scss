@@ -37,6 +37,9 @@
 
 .quizzes-taken-directory {
     width: 15%;
+    border: 2px solid lightgray; 
+    border-radius: 6px;
+    margin-right: 20px;  
 }
 
 .questions-answered-box {
@@ -83,7 +86,7 @@
     width: 800px;
     height: 700px;
     flex-wrap: wrap;
-    overflow-y: scroll;
+ 
     
 }
 
@@ -110,17 +113,41 @@ display: flex;
 
 
 
-.choice-text{
+.choice-text-blue{
   width: 400px;
   padding-top: 10px;
+  color: rgb(0, 136, 254); 
+
+}
+.choice-text-green{
+  width: 400px;
+  padding-top: 10px;
+  color: rgb(0, 196, 159);
 
 }
 
 .label-and-pie-div{
     display: flex;
+    justify-content: space-between;
+    align-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 800px;
+  
     margin: 0px;
+}
+
+.label-and-pie-div div {
+    padding: 5px;
+}
+
+.demo-label-bolded{
+    font-weight: 600;
+    width: 60px;
+}
+
+.sample-size-label{
+    font-size: 14px;
+    width: 60px;
 }
 
 .buttons-and-text{
@@ -137,9 +164,16 @@ display: flex;
 
 .pie-graphs{
     height: 500px;
-    overflow-y: scroll;
-    width: 900px;
-    display: flex;
-    flex-direction: column;
+   
+    width: 800px;
+   overflow-y: scroll;
     align-items: center;
 }
+
+
+.recharts-wrapper{
+    padding: 20px; 
+}
+
+
+
