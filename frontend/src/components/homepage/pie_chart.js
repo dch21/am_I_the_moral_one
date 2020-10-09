@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './homepage.scss'
 import {
-    PieChart, Pie, Sector, Cell,
+    PieChart, Pie, Sector, Cell, ResponsiveContainer
 } from 'recharts';
 
 
@@ -160,6 +160,7 @@ export default class MainPieChart extends PureComponent {
             );
         };
 
+        
         return (
             <div className="data-charts">
                 <div className="buttons-and-text">
@@ -175,17 +176,23 @@ export default class MainPieChart extends PureComponent {
                 </div>
                 <p className="question-text">{questionText}</p>
                 </div>
-
-                <p className="choice-text">Blue: {' ' + choiceAtext}</p>
-                <p className="choice-text">Green: {' ' +choiceBtext}</p>
+            <div>
+                <div className="choice-text-blue"> {choiceAtext}</div>
+                <div className="choice-text-green">{choiceBtext}</div>
+            </div>
         <div className='pie-graphs'>
             <div className="label-and-pie-div">
-                    <p>{labels[0]}</p>
-                <PieChart width={400} height={400}>
+                        <div>
+                            <div className="demo-label-bolded">{labels[0]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup1A === undefined ? "" : `sample size: ${demoGroup1A + demoGroup1B}`}</div>
+                            </div>
+      
+                <PieChart width={200} height={200}>
                     <Pie 
                         data={data}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -197,16 +204,20 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-                </div>
-
-                <div className="label-and-pie-div">
-                <p>{labels[1]}</p>
-                <PieChart width={400} height={400}>
+                       
+              
+               
+                        <div>
+                            <div className="demo-label-bolded">{labels[1]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup2A === undefined ? "" : `sample size: ${demoGroup2A + demoGroup2B}`}</div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     
                     <Pie
                         data={data2}
-                        cx={200}
-                        cy={200}
+                                cx={100}
+                                cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -219,14 +230,19 @@ export default class MainPieChart extends PureComponent {
                     </Pie>
                 </PieChart>
                 </div>
-
+            
                 <div className="label-and-pie-div">
-                    <p>{labels[2]}</p>
-                <PieChart width={400} height={400}>
+                        <div>
+                            <div className="demo-label-bolded">{labels[2]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup3A === undefined ? "" : `sample size: ${demoGroup3A + demoGroup3B}`}</div>
+                        </div>
+           
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data3}
-                        cx={200}
-                        cy={200}
+                                cx={100}
+                                cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -238,15 +254,18 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-                </div>
-
-                <div className="label-and-pie-div">
-                    <p>{labels[3]}</p>
-                <PieChart width={400} height={400}>
+                
+                        <div>
+                            <div className="demo-label-bolded">{labels[3]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup4A === undefined ? "" : `sample size: ${demoGroup4A + demoGroup4B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data4}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -261,12 +280,17 @@ export default class MainPieChart extends PureComponent {
                 </div>
 
                 <div className="label-and-pie-div">
-                    <p>{labels[4]}</p>
-                <PieChart width={400} height={400}>
+                        <div>
+                            <div className="demo-label-bolded">{labels[4]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup5A === undefined ? "" : `sample size: ${demoGroup5A + demoGroup5B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data5}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -278,15 +302,18 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-                </div>
-
-                <div className="label-and-pie-div">
-                    <p>{labels[5]}</p>
-                <PieChart width={400} height={400}>
+              
+                        <div>
+                            <div className="demo-label-bolded">{labels[5]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup6A === undefined ? "" : `sample size: ${demoGroup6A + demoGroup6B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data6}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -301,12 +328,17 @@ export default class MainPieChart extends PureComponent {
                 </div>
 
                 <div className="label-and-pie-div">
-                    <p>{labels[6]}</p>
-                <PieChart width={400} height={400}>
+                        <div>
+                            <div className="demo-label-bolded">{labels[6]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup7A === undefined ? "" : `sample size: ${demoGroup7A + demoGroup7B}`}
+                            </div>
+                        </div>
+                        <PieChart width={200} height={200}>
                     <Pie
                         data={data7}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -318,14 +350,19 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-                </div>
+                
 
-
-                <PieChart width={400} height={400}>
+                        <div>
+                            <div className="demo-label-bolded">{labels[7]}</div>
+                            <div className="sample-size-label">
+                                {demoGroup8A === undefined ? "" : `sample size: ${demoGroup8A + demoGroup8B}`}
+                            </div>
+                        </div>
+                <PieChart width={200} height={200}>
                     <Pie
                         data={data8}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -337,13 +374,22 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
-
-
-                <PieChart width={400} height={400}>
+                    </div>
+                   
+                    <div className="label-and-pie-div">
+                         <div>
+                            <div className="demo-label-bolded">{labels[8]}</div>
+                           
+                            <div className="sample-size-label">
+                                {demoGroup9A === undefined ? "" : `sample size: ${demoGroup9A + demoGroup9B}`}
+                                </div>
+                        </div>
+                        </div>
+                <PieChart width={200} height={200}>
                     <Pie
                         data={data9}
-                        cx={200}
-                        cy={200}
+                        cx={100}
+                        cy={100}
                         labelLine={false}
                         label={renderCustomizedLabel}
                         outerRadius={80}
@@ -358,6 +404,7 @@ export default class MainPieChart extends PureComponent {
 
                 </div>
             </div>
+          
 
         );
     }

@@ -19,7 +19,7 @@ import ResultsPage from "./results/results_container"
 const App = () => (
     <div>
         <NavBar/> 
-        <Route exact path="/results/" component={ResultsPage} />
+        <ProtectedRoute exact path="/results/" component={ResultsPage} />
         <Switch>
             {/* <Route exact path="/results/:resultsId" component={ResultsPage} /> */}
             <AuthRoute exact path="/signup" component={SignInContainer} />
