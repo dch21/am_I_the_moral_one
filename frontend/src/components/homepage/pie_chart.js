@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './homepage.scss'
 import {
-    PieChart, Pie, Sector, Cell,
+    PieChart, Pie, Sector, Cell, ResponsiveContainer
 } from 'recharts';
 
 
@@ -163,47 +163,52 @@ export default class MainPieChart extends PureComponent {
 
         return (
             <div className="data-charts">
-                <div className="filter-buttons">
-                    <button onClick={() => this.handleToggle(age)}>Age</button>
-                    <button onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
-                    <button onClick={() => this.handleToggle(gender)}>Gender</button>
-                    <button onClick={() => this.handleToggle(location)}>Location</button>
-                    <button onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
-                    <button onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
-                    <button onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
-                    <button onClick={() => this.handleToggle(education)}>Education</button>
+                <p className="full-question-text">{questionText}</p>
+                <div className="demo-filters">
+                    <div className="demo-filter-header">Demographic filters:</div>
+                    <div className="filter-buttons">
+                        <button onClick={() => this.handleToggle(age)}>Age</button>
+                        <button onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
+                        <button onClick={() => this.handleToggle(gender)}>Gender</button>
+                        <button onClick={() => this.handleToggle(location)}>Location</button>
+                        <button onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
+                        <button onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
+                        <button onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
+                        <button onClick={() => this.handleToggle(education)}>Education</button>
+                    </div>
                 </div>
-                <p>{questionText}</p>
-                <p>Blue:{choiceAtext}</p>
-                <p>Green:{choiceBtext}</p>
+                <div className="choice-legend">
+                    <p>Blue:{choiceAtext}</p>
+                    <p>Green:{choiceBtext}</p>
+                </div>
+                
 
 
                     <p>{labels[0]}</p>
-                <PieChart width={400} height={400}>
-                    <Pie 
-                        data={data}
-                        cx={200}
-                        cy={200}
-                        labelLine={false}
-                        label={renderCustomizedLabel}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                    >
-                        {
-                            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                        }
-                    </Pie>
-                </PieChart>
-
-                <PieChart width={400} height={400}>
+                    <PieChart width={100} height={100}>
+                        <Pie 
+                            data={data}
+                            cx={50}
+                            cy={50}
+                            labelLine={false}
+                            label={renderCustomizedLabel}
+                            outerRadius={40}
+                            fill="#8884d8"
+                            dataKey="value"
+                        >
+                            {
+                                data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                            }
+                        </Pie>
+                    </PieChart>
+                <PieChart width={100} height={100}>
                     <Pie
                         data={data2}
-                        cx={200}
-                        cy={200}
+                        cx={50}
+                        cy={50}
                         labelLine={false}
                         label={renderCustomizedLabel}
-                        outerRadius={80}
+                        outerRadius={40}
                         fill="#8884d8"
                         dataKey="value"
                     >

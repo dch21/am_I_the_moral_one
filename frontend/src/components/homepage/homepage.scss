@@ -80,9 +80,10 @@
 
 .data-charts {
     display: flex;
-    min-width: 1200px;
+    min-width: 100%;
     min-height: 700px;
     flex-wrap: wrap;
+    text-align: left;
 }
 
 .recharts-surface{
@@ -92,5 +93,31 @@
 .filter-buttons {
     display: flex;
     flex-direction: column;
+    margin: 10px;
 }
 
+.full-question-text {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.filter-buttons > button {
+    background-color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.demo-filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-filter-header {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.choice-legend {
+    
+}
