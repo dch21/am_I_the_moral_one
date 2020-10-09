@@ -17,12 +17,7 @@
     height: 500px;
 }
 
-.quizzes-taken-header {
-    font-size: 25px;
-    margin-bottom: 17px;
-    margin-top: 4px;
-    
-}
+
 .questions-answered-header {
     font-size: 25px;
     margin-bottom: 17px;
@@ -35,9 +30,7 @@
     margin-bottom: 15px;
 }
 
-.quizzes-taken-directory {
-    width: 15%;
-}
+
 
 .questions-answered-box {
     width: 15%;
@@ -57,10 +50,7 @@
     overflow-y: scroll;
 }
 
-.questions-answered-list > div, .quizzes-taken-links > div {
-    margin-left: 20px;
-    margin-top: 20px;
-}
+
 
 .inner-data-box {
     width: 96%;

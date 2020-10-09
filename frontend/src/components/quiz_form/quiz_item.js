@@ -35,7 +35,7 @@ class QuizItem extends React.Component{
         return(
             <div className="question-item">
                 <div className='question-title'>{'Question' + " " + question._id}</div>
-                <div>{innerQ.text}</div>
+                <div className="quiz-form-question-text">{innerQ.text}</div>
                 <div className="question-buttons">
                     
                     <input 

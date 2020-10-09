@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 router.patch("/update/:id", (req, res) => {
     filter =  { _id: req.params.id , quizNum: req.body.quizNum };
     update =  {  $inc: {
-      [`question.questionChoices.${req.body.choice}.demo.age.${req.body.age}`]: 1,
+     [`question.questionChoices.${req.body.choice}.demo.age.${req.body.age}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.education.${req.body.education}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.politicalLeaning.${req.body.politicalLeaning}`]: 1,
      [`question.questionChoices.${req.body.choice}.demo.religiousAffilation.${req.body.religiousAffilation}`]: 1,
@@ -32,7 +32,6 @@ router.patch("/update/:id", (req, res) => {
      [`question.questionChoices.${req.body.choice}.demo.location.${req.body.location}`]: 1,
     }
      };
-
     Quiz.findOneAndUpdate( filter, update, function(
     err,
     result
@@ -53,7 +52,6 @@ router.post("/createQuiz", (req, res) => {
       _id: req.body.id,
 
       quizNum: req.body.quizNum,
-      //   questionNum: req.body.questionNum,
       "question.text": req.body.text,
       "question.choiceAText": req.body.choiceAText,
       "question.choiceBText": req.body.choiceBText,

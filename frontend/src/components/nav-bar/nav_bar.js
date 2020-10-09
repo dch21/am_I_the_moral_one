@@ -24,15 +24,14 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <button onClick={this.logoutUser} className="logout-button">Logout</button>
+                    <Link to={'/results'} className="go-right-to-results">Go right to results</Link>
                 </div>
             );
         } else {
             return (
                 <div className="nav-links">
                     <Link to={'/signup'}>Signup</Link>
-                    <br></br>
                     <Link to={'/login'}>Login</Link>
-                    <br></br>
                     <a className="demo-button" onClick={() => this.handleClick()}>Demo</a>
                 </div>
             );

@@ -71,7 +71,6 @@ class Homepage extends React.Component {
                     </div>
                 </div>
                 <div className="main-data-div">
-                    <h1 className="data-header">Data:</h1>
                     <div className="inner-data-box">
                         <MainPieChart />
                     </div>

@@ -143,6 +143,11 @@ export default class MainPieChart extends PureComponent {
             { name: 'Group B', value: demoGroup9B },
         ];
 
+        const data10 = [
+            { name: 'Group A', value: 0 },
+            { name: 'Group B', value: 0 },
+        ];
+
         const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#bada55',  '#92A0F2'];
 
         const RADIAN = Math.PI / 180;
@@ -163,24 +168,27 @@ export default class MainPieChart extends PureComponent {
         
         return (
             <div className="data-charts">
-                <div className="buttons-and-text">
-                <div className="filter-buttons">
-                    <button onClick={() => this.handleToggle(age)}>Age</button>
-                    <button onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
-                    <button onClick={() => this.handleToggle(gender)}>Gender</button>
-                    <button onClick={() => this.handleToggle(location)}>Location</button>
-                    <button onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
-                    <button onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
-                    <button onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
-                    <button onClick={() => this.handleToggle(education)}>Education</button>
+                    <div className="header-question-buttons">
+                        <div className="buttons-and-text">
+                        <div className="filter-buttons">
+                            <button className="filter-button-item" onClick={() => this.handleToggle(age)}>Age</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(gender)}>Gender</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(location)}>Location</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
+                            <button className="filter-button-item" onClick={() => this.handleToggle(education)}>Education</button>
+                        </div>
+                        <p className="question-text">{questionText}</p>
+                        </div>
                 </div>
-                <p className="question-text">{questionText}</p>
-                </div>
-            <div>
-                <div className="choice-text-blue"> {choiceAtext}</div>
-                <div className="choice-text-green">{choiceBtext}</div>
-            </div>
+           
         <div className='pie-graphs'>
+                    <div className="legend">
+                        <div className="choice-text-blue"> {choiceAtext}</div>
+                        <div className="choice-text-green">{choiceBtext}</div>
+                    </div>
             <div className="label-and-pie-div">
                         <div>
                             <div className="demo-label-bolded">{labels[0]}</div>
@@ -373,10 +381,10 @@ export default class MainPieChart extends PureComponent {
                             data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
                         }
                     </Pie>
-                </PieChart>
-                    </div>
+                   </PieChart>
+                </div>
                    
-                    <div className="label-and-pie-div">
+                <div className="label-and-pie-div">
                          <div>
                             <div className="demo-label-bolded">{labels[8]}</div>
                            
@@ -384,24 +392,41 @@ export default class MainPieChart extends PureComponent {
                                 {demoGroup9A === undefined ? "" : `sample size: ${demoGroup9A + demoGroup9B}`}
                                 </div>
                         </div>
-                        </div>
-                <PieChart width={200} height={200}>
-                    <Pie
-                        data={data9}
-                        cx={100}
-                        cy={100}
-                        labelLine={false}
-                        label={renderCustomizedLabel}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                    >
-                        {
-                            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                        }
-                    </Pie>
-                </PieChart>
+                        
 
+                            <PieChart width={200} height={200}>
+                                <Pie
+                                    data={data9}
+                                    cx={100}
+                                    cy={100}
+                                    labelLine={false}
+                                    label={renderCustomizedLabel}
+                                    outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                >
+                                    {
+                                        data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                                    }
+                                </Pie>
+                            </PieChart>
+                        <PieChart width={200} height={200}>
+                            <Pie
+                                data={data10}
+                                cx={100}
+                                cy={100}
+                                labelLine={false}
+                                label={renderCustomizedLabel}
+                                outerRadius={80}
+                                fill="#8884d8"
+                                dataKey="value"
+                            >
+                                {
+                                    data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                                }
+                            </Pie>
+                        </PieChart>
+                    </div>
                 </div>
             </div>
           
