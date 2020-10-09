@@ -32,7 +32,7 @@ class ResultsPage extends React.Component {
         const texts = this.props.allPromptTexts;
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]    
         return (
-            <div className="splash-div">
+            <div className="jake-result-master-div">
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Questions</h1>
                     <div className="quizzes-taken-links">
@@ -42,9 +42,9 @@ class ResultsPage extends React.Component {
                     </div>
                 </div>
                
-                <div className="main-data-div">
+                <div className="jake-results-div">
                     <h1 className="data-header">Data:</h1>
-                    <div className="inner-data-box">                     
+                    <div className="jakes-data-box">                     
                         <MainPieChart demo={demographicsArray} questionNumber={this.state.questionNumber} />
                     </div>
                 </div>

@@ -66,7 +66,7 @@
 
 .inner-data-box {
     width: 96%;
-    height: 85%;
+    height: auto;
     border-radius: 10px;
     background-color: white;
     margin: auto;
@@ -80,13 +80,15 @@
 
 .data-charts {
     display: flex;
-    min-width: 1200px;
-    min-height: 700px;
+    width: 800px;
+    height: 700px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    
 }
 
 .recharts-surface{
-
+display: flex;
 }
 
 .filter-buttons {
@@ -94,3 +96,50 @@
     flex-direction: column;
 }
 
+
+.jake-result-master-div{
+    display: flex;
+}
+
+.quizzes-taken-directory{
+    width: 30%;
+}
+.jake-results{
+    display: flex;
+}
+
+
+
+.choice-text{
+  width: 400px;
+  padding-top: 10px;
+
+}
+
+.label-and-pie-div{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 0px;
+}
+
+.buttons-and-text{
+    display: flex;
+}
+.buttons-and-text div{
+    width: 30%;
+}
+
+.question-text{
+    width: 70%;
+    padding-left: 20px;
+}
+
+.pie-graphs{
+    height: 500px;
+    overflow-y: scroll;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

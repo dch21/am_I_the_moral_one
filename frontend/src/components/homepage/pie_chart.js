@@ -162,6 +162,7 @@ export default class MainPieChart extends PureComponent {
 
         return (
             <div className="data-charts">
+                <div className="buttons-and-text">
                 <div className="filter-buttons">
                     <button onClick={() => this.handleToggle(age)}>Age</button>
                     <button onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
@@ -172,11 +173,13 @@ export default class MainPieChart extends PureComponent {
                     <button onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
                     <button onClick={() => this.handleToggle(education)}>Education</button>
                 </div>
-                <p>{questionText}</p>
-                <p>Blue:{choiceAtext}</p>
-                <p>Green:{choiceBtext}</p>
+                <p className="question-text">{questionText}</p>
+                </div>
 
-
+                <p className="choice-text">Blue: {' ' + choiceAtext}</p>
+                <p className="choice-text">Green: {' ' +choiceBtext}</p>
+        <div className='pie-graphs'>
+            <div className="label-and-pie-div">
                     <p>{labels[0]}</p>
                 <PieChart width={400} height={400}>
                     <Pie 
@@ -194,8 +197,12 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
+                <div className="label-and-pie-div">
+                <p>{labels[1]}</p>
                 <PieChart width={400} height={400}>
+                    
                     <Pie
                         data={data2}
                         cx={200}
@@ -211,7 +218,10 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
+                <div className="label-and-pie-div">
+                    <p>{labels[2]}</p>
                 <PieChart width={400} height={400}>
                     <Pie
                         data={data3}
@@ -228,7 +238,10 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
+                <div className="label-and-pie-div">
+                    <p>{labels[3]}</p>
                 <PieChart width={400} height={400}>
                     <Pie
                         data={data4}
@@ -245,7 +258,10 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
+                <div className="label-and-pie-div">
+                    <p>{labels[4]}</p>
                 <PieChart width={400} height={400}>
                     <Pie
                         data={data5}
@@ -262,8 +278,10 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
-
+                <div className="label-and-pie-div">
+                    <p>{labels[5]}</p>
                 <PieChart width={400} height={400}>
                     <Pie
                         data={data6}
@@ -280,8 +298,10 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
-
+                <div className="label-and-pie-div">
+                    <p>{labels[6]}</p>
                 <PieChart width={400} height={400}>
                     <Pie
                         data={data7}
@@ -298,6 +318,7 @@ export default class MainPieChart extends PureComponent {
                         }
                     </Pie>
                 </PieChart>
+                </div>
 
 
                 <PieChart width={400} height={400}>
@@ -335,7 +356,7 @@ export default class MainPieChart extends PureComponent {
                     </Pie>
                 </PieChart>
 
-
+                </div>
             </div>
 
         );
