@@ -23,7 +23,6 @@ class QuizForm extends React.Component{
     
         let user = this.props.user; 
         this.props.functions.map((choice, idx) => {
-            console.log(choice)
             this.props.updateQuizQuestion((idx + 1), 1, choice, user.age, user.education, user.politicalLeaning, user.religiousAffilation, user.gender, user.ethnicity, user.petChoice, user.location)
         })
         this.props.history.push('/results')

@@ -4,7 +4,7 @@ import { fetchQuestion} from '../../actions/quiz_actions';
 import {updateQuizQuestion}  from '../../util/quiz_api_util';
 import {withRouter} from 'react-router-dom'; 
 
- const mSTP = (state, ownProps) => ({
+ const mSTP = (state) => ({
      user: state.session.user,
      functions: ["","","","","","","","","","",],
      question1: state.questions[1] || {},
