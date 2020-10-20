@@ -22,6 +22,8 @@ handleClickA(){
             }
  ```
  
+ ![Logo](./readme_files/screen_shot.png)
+ 
  When the user clicks the submit button, we send her answers and demographic info to our backend: 
  
  
