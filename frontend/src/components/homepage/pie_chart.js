@@ -22,9 +22,15 @@ export default class MainPieChart extends PureComponent {
 
     handleToggle(field) {
       
-        let current = document.getElementsByClassName('active');    
+        let current = document.getElementsByClassName('active'); 
+        debugger
         current[0].className = current[0].className.replace(' active', "")
+        // for(let i = 0; i < current.length; i++){
+        //     current[i].className = current[i].className.replace(' active', "")
+        // }
+        debugger
         document.getElementById(field).className += " active"; 
+        debugger
         this.setState({
             demo: field
         })
