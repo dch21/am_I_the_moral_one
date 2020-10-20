@@ -6,7 +6,7 @@ import NavBar from './nav-bar/nav_bar_container'
 import LoginFormContainer from './session/login_form_container'; 
 import SignInContainer from './session/signup_form_container'; 
 import Splash from './splash/splash';
-import NewQuizzes from './quizzes/quizzes';
+import Quizzes from './quiz_form/quiz_form_container';
 import CreateQuiz from './quizzes/create_quiz_container' //this is a form that makes all 10 questions for a complete questionnaire
 import Homepage from './homepage/homepage';
 import '../App.css';
@@ -28,7 +28,7 @@ const App = () => (
             <AuthRoute exact path="/" component={Splash} />
             <ProtectedRoute exact path="/createquiz" component={CreateQuiz} /> 
             <ProtectedRoute exact path="/homepage" component={Homepage} />
-            <ProtectedRoute exact path="/quizzes" component={NewQuizzes} />
+            <ProtectedRoute exact path="/quizzes/:quizNum" component={Quizzes} />
         </Switch>
     </div>
 )
