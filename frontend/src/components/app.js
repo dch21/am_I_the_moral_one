@@ -10,14 +10,15 @@ import NewQuizzes from './quizzes/quizzes';
 import Homepage from './homepage/homepage';
 import '../App.css';
 import ResultsPage from "./results/results_container"
-
-
+import Footer from './footer/footer'; 
 
 
 
 
 const App = () => (
     <div>
+       
+       
         <NavBar/> 
         <ProtectedRoute exact path="/results/" component={ResultsPage} />
         <Switch>
@@ -28,6 +29,7 @@ const App = () => (
             <ProtectedRoute exact path="/homepage" component={Homepage} />
             <ProtectedRoute exact path="/quizzes" component={NewQuizzes} />
         </Switch>
+        <Route path='/' component={Footer}></Route>
     </div>
 )
 export default App;

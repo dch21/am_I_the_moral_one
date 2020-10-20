@@ -24,7 +24,7 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <button onClick={this.logoutUser} className="logout-button">Logout</button>
-                    <Link to={'/results'} className="go-right-to-results">Go right to results</Link>
+                    <Link className="go-right-to-results">Go to Quizes</Link>
                 </div>
             );
         } else {

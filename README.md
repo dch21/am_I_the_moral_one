@@ -76,7 +76,7 @@ handleClickA(){
    
    
    Here's what it looks like under the hood: 
-   
+   ![Logo](/readme_files/screen_shot.png)
    ```html
        <div className="demo-label-bolded">{labels[0]}</div>
           <div className="sample-size-label">

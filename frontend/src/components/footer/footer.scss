@@ -1,0 +1,30 @@
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid black;
+    padding: 20px;
+    margin-top: 55px;
+    color: gray;
+   
+}
+
+.footer h3 {
+    
+    font-weight: bold;
+}
+
+.footer div {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-evenly;
+}
+
+
+.footer a:hover {
+    cursor: pointer;
+    color: #70d9e4;
+
+}
+
+

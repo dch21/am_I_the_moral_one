@@ -19,6 +19,9 @@ class ResultsPage extends React.Component {
     }
 
     handleClick(field) {
+        let current = document.getElementsByClassName('active');
+        current[0].className = current[0].className.replace(' active', "")
+        document.getElementById(field).className += " active"; 
         this.setState({
             questionNumber: field,
         })
@@ -26,15 +29,20 @@ class ResultsPage extends React.Component {
 
     render() {
         const texts = this.props.allPromptTexts;
-        const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]    
+        const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]   
+        
         return (
             <div className="jake-result-master-div">
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Questions</h1>
                     <div className="quizzes-taken-links">
-                        {texts.map ( (text, i) => (
-                            <button className="question-taken-item" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</button>
-                        ))}
+                        {texts.map ( (text, i) => {
+                            if (i === 0){
+                               return <button id={`${i + 1}`} className="question-taken-item active" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0, 4).join(" ")}...</button>
+                            } else {
+                               return <button id={`${i + 1}`} className="question-taken-item" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</button>
+                        }})
+                        }
                     </div>
                 </div>
                

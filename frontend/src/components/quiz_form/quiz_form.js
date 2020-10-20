@@ -1,25 +1,28 @@
 import React from 'react'; 
 import './quiz_form.scss'; 
 import QuizItem from './quiz_item'; 
+import {Link} from 'react-router-dom'; 
+
 class QuizForm extends React.Component{
     constructor(props){
         super(props); 
-        this.state = {
-            q1: '',
-            q2: '',
-            q3: '',
-            q4: '',
-            q5: '',
-            q6: '',
-            q7: '',
-            q8: '',
-            q9: '',
-            q10: ''
-        }
-        this.handleSubmit = this.handleSubmit.bind(this); 
+        // this.state = {
+        //     q1: '',
+        //     q2: '',
+        //     q3: '',
+        //     q4: '',
+        //     q5: '',
+        //     q6: '',
+        //     q7: '',
+        //     q8: '',
+        //     q9: '',
+        //     q10: ''
+        // }
+        // this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
     handleClick(){
+     
     
         let user = this.props.user; 
         this.props.functions.map((choice, idx) => {
@@ -50,22 +53,22 @@ class QuizForm extends React.Component{
     }
 
 
-    handleSubmit(e){
-        e.preventDefault(); 
-        let response = {
-            q1: this.state.q1,
-            q2: this.state.q2,
-            q3: this.state.q3,
-            q4: this.state.q4,
-            q5: this.state.q5,
-            q6: this.state.q6,
-            q7: this.state.q7,
-            q8: this.state.q8,
-            q9: this.state.q9,
-            q10: this.state.q10
-        }
-        this.props.action(response); 
-    }
+    // handleSubmit(e){
+    //     e.preventDefault(); 
+    //     let response = {
+    //         q1: this.state.q1,
+    //         q2: this.state.q2,
+    //         q3: this.state.q3,
+    //         q4: this.state.q4,
+    //         q5: this.state.q5,
+    //         q6: this.state.q6,
+    //         q7: this.state.q7,
+    //         q8: this.state.q8,
+    //         q9: this.state.q9,
+    //         q10: this.state.q10
+    //     }
+    //     this.props.action(response); 
+    // }
 
     render(){
         if (!this.props.question10.question) return null;
@@ -81,6 +84,11 @@ class QuizForm extends React.Component{
         const q10 = this.props.question10
 return(
     <div> 
+        <div className='results-link-div'>
+            <div></div>
+            <Link to={'/results'} className="go-right-to-results">Go right to results</Link>
+
+        </div>
         <QuizItem question={q1} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
         <QuizItem question={q2} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
         <QuizItem question={q3} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
