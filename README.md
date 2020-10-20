@@ -12,7 +12,7 @@ Am I the Moral One's backend uses MongoDB, Node.js and Express, it's frontend us
 # Quizzes 
  ![Quizes](./readme_files/screen_shot.png)
  
-In our database, we stored demographic data with each question answer. The benefit of this was that this data was easily retrievable. One downside was that we needed to be creative when it came to creating our quiz form functionality. Our quiz form stored an object (named functions) representing the user's answers. We updated that object each time the user selected an answer button: 
+In our database, we stored demographic data with each question answer. The benefit of this was that this data was easily retrievable. However, this also meant that we needed to be creative when it came to creating our quiz form functionality. Our quiz form stored an object (named functions) representing the user's answers. We updated that object each time the user selected an answer button: 
 
  ```js
 handleClickA(){
@@ -74,7 +74,7 @@ handleClickA(){
  
  # Data Visualization 
  
-We used the Recharts API to visualize the demographic data for our quizes, i.e. what conservative people answered on a given moral dilema. This data was taken from our Redux state. Below are two pictures displaying a sample redux state: 
+We used the Recharts API to visualize the demographic data for our quizes, i.e. what answers people of diffrent political ideologies gave on a given moral dilema. This data was taken from our Redux state. Below are two pictures displaying a sample redux state: 
 
 ![Redux](/readme_files/ReduxState1.png)
 
