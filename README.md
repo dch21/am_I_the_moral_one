@@ -85,7 +85,7 @@ We used the Recharts API to visualize the demographic data for our quizes, i.e. 
    ![Graphs](/readme_files/screenshot_2.png)
    
    
-   Here's what it looks like under the hood: 
+   Here's what the pie chart looks like under the hood: 
    
    ```html
        <div className="demo-label-bolded">{labels[0]}</div>
