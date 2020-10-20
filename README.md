@@ -74,7 +74,14 @@ handleClickA(){
  
  # Data Visualization 
  
-   To display our data, we used the Recharts API. Here's what it looks like on our website: 
+We used the Recharts API to visualize the demographic data for our quizes, i.e. what conservative people answered on a given moral dilema. This data was taken from our Redux state. Below are two pictures displaying a sample redux state: 
+
+![Redux](/readme_files/ReduxState1.png)
+
+![Redux](/readme_files/ReduxState2.png)
+  
+  
+ Here's what it looks like on our website: 
    ![Graphs](/readme_files/screenshot_2.png)
    
    
