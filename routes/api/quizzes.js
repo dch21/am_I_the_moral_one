@@ -6,6 +6,14 @@ const mongoose = require('mongoose');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the quiz route" }));
 
+
+router.get("/", (req, res) => {
+  Quiz.estimatedDocumentCount()
+    .then((count) => res.json(count/10))
+});
+
+
+
 //  This would get the data for a specific Question NOT a quiz
 router.get("/:id", (req, res) => {
   // console.log("hit get question")
