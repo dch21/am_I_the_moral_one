@@ -6,13 +6,29 @@ const mongoose = require('mongoose');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the quiz route" }));
 
-//  This would get the data for a specific Question NOT a quiz
-router.get("/:id", (req, res) => {
-  // console.log("hit get question")
-  Quiz.findById(req.params.id)
+
+router.get("/", (req, res) => {
+  Quiz.estimatedDocumentCount()
+    .then((count) => res.json(count/10))
+});
+
+
+
+
+router.get("/questions", (req, res) => {
+  Quiz.find()
     .then((quiz) => res.json(quiz))
     .catch((err) =>
-      res.status(404).json({ noquizfound: "No quiz found with that ID" })
+      res.status(404).json({ noquestionsfound: "No questions found" })
+    );
+});
+
+//  GETS the first question of a Quiz given its QuizNum in the param
+router.get("/:id/first", (req, res) => {
+  Quiz.findOne( {quizNum: req.params.quizNum})
+    .then((question) => res.json(question))
+    .catch((err) =>
+      res.status(404).json({ noquestionsfound: "No questions found" })
     );
 });
 

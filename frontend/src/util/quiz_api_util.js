@@ -36,8 +36,27 @@ export const updateQuizQuestion = (questionId,
      });
  }
 
-export const submitQuiz = (userData) => {
-    return axios.post('/api/quizzes/submit', userData);
+ export const createQuestion = (_id,
+    quizNum, 
+    text,
+    choiceAText, 
+    choiceBText,) => {    
+    axios({
+       method: 'post',
+       url: "/api/quizzes/createQuiz",
+       data: {
+           quizNum: quizNum,
+           _id: _id, 
+           text: text, 
+           choiceAText: choiceAText, 
+           choiceBText: choiceBText, 
+       }
+    });
+}
+
+
+export const getFirstQuestion = (id) => {
+    return axios.get(`/api/quizzes/${id}/first`);
 };
 
 export const fetchQuestion = (id) => {
@@ -46,4 +65,8 @@ export const fetchQuestion = (id) => {
 
 export const fetchAllQuestionsFromAQuiz = (promptId) => {
     return axios.get(`/api/prompts/${promptId}`)
+}
+
+export const fetchTotalNumberOfQuizzes= () => {
+    return axios.get("/api/quizzes/")
 }
