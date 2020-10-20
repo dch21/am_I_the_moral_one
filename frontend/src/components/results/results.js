@@ -9,13 +9,13 @@ class ResultsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            questionNumber: 1,
+            questionNumber: this.props.quiz,
         }
         this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchAllQuestionsFromAQuiz(1)
+        this.props.fetchAllQuestionsFromAQuiz(this.props.quiz)
     }
 
     handleClick(field) {
@@ -28,6 +28,7 @@ class ResultsPage extends React.Component {
     }
 
     render() {
+         
         const texts = this.props.allPromptTexts;
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]   
         

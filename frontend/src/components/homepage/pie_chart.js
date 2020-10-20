@@ -23,20 +23,21 @@ export default class MainPieChart extends PureComponent {
     handleToggle(field) {
       
         let current = document.getElementsByClassName('active'); 
-        debugger
+        
         current[0].className = current[0].className.replace(' active', "")
         // for(let i = 0; i < current.length; i++){
         //     current[i].className = current[i].className.replace(' active', "")
         // }
-        debugger
+        
         document.getElementById(field).className += " active"; 
-        debugger
+        
         this.setState({
             demo: field
         })
     }
     
     componentDidMount() {
+        debugger
         this.props.fetchQuestionData(this.props.questionNumber);
     }
 
@@ -51,10 +52,12 @@ export default class MainPieChart extends PureComponent {
 
 
     render() {
+        
         const [age, ethnicity, gender, location, petChoice, religiousAffilation, politicalLeaning, education] = this.props.demo
 
         const targetDemo = this.state.demo
         if (!this.props.questionData.data) {
+            
             return null
         }
         const questionText = this.props.questionData.data.question.text

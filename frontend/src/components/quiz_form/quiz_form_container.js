@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import QuizForm from './quiz_form'
 import { fetchQuestion} from '../../actions/quiz_actions'; 
 import {updateQuizQuestion}  from '../../util/quiz_api_util';
-import {fetchAllQuestionsFromAQuiz} from '../../util/quiz_api_util';
+import {fetchAllQuestionsFromAQuiz} from '../../actions/quiz_actions';
 import {withRouter} from 'react-router-dom'; 
 
- const mSTP = (state, ownProps) => ({
+ const mSTP = (state, ownProps) => {
+     
+    return {
      user: state.session.user,
      quizNum: ownProps.match.params.quizNum,
      functions: ["","","","","","","","","","",],
@@ -21,7 +23,9 @@ import {withRouter} from 'react-router-dom';
     //  question9: state.questions[9] || {},
     //  question10: state.questions[10] || {}
 
- })
+     }
+
+  } 
 
  const mDTP = dispatch => ({
      fetchAllQuestions: (quizId) => dispatch(fetchAllQuestionsFromAQuiz(quizId)),

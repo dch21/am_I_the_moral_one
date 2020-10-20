@@ -9,7 +9,7 @@ class QuizItem extends React.Component{
         }
     }
     handleClickA(){
-        this.props.functions[this.props.question._id -1] = 'choiceA'; 
+        this.props.functions[this.props.questionNumber -1] = 'choiceA'; 
         if(this.state.KlassA === 'quiz-question-a'){
             this.setState({KlassA: "select-a", KlassB: 'quiz-question-b'})} else {
                 this.setState({KlassA: 'quiz-question-a'})
@@ -18,23 +18,23 @@ class QuizItem extends React.Component{
 
     }
     handleClickB() {
-        this.props.functions[this.props.question._id - 1] = 'choiceB';
+        this.props.functions[this.props.questionNumber - 1] = 'choiceB';
         if(this.state.KlassB === 'quiz-question-b'){
             this.setState({KlassB: "select-b", KlassA: 'quiz-question-a' })} else {
                 this.setState({KlassB: 'quiz-question-b'})
             }
     }
     render(){
-    
+        
 
         const {question, user, functions} = this.props; 
-        const innerQ = question.question
+        const innerQ = question
         if(!innerQ) return null; 
         
         console.log(innerQ.choiceBText)  
         return(
             <div className="question-item">
-                <div className='question-title'>{'Question' + " " + question._id}</div>
+                <div className='question-title'>{'Question' + " " + this.props.questionNumber} </div>
                 <div className="quiz-form-question-text">{innerQ.text}</div>
                 <div className="question-buttons">
                     

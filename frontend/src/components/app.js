@@ -21,7 +21,7 @@ const App = () => (
        
        
         <NavBar/> 
-        <ProtectedRoute exact path="/results/" component={ResultsPage} />
+        <ProtectedRoute exact path="/results/:quizNum" component={ResultsPage} />
         <Switch>
             {/* <Route exact path="/results/:resultsId" component={ResultsPage} /> */}
             <AuthRoute exact path="/signup" component={SignInContainer} />
