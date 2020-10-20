@@ -11,16 +11,17 @@ import CreateQuiz from './quizzes/create_quiz_container' //this is a form that m
 import Homepage from './homepage/homepage';
 import '../App.css';
 import ResultsPage from "./results/results_container"
-
-
+import Footer from './footer/footer'; 
 
 
 
 
 const App = () => (
     <div>
+       
+       
         <NavBar/> 
-        <ProtectedRoute exact path="/results/" component={ResultsPage} />
+        <ProtectedRoute exact path="/results/:quizNum" component={ResultsPage} />
         <Switch>
             {/* <Route exact path="/results/:resultsId" component={ResultsPage} /> */}
             <AuthRoute exact path="/signup" component={SignInContainer} />
@@ -30,6 +31,7 @@ const App = () => (
             <ProtectedRoute exact path="/homepage" component={Homepage} />
             <ProtectedRoute exact path="/quizzes/:quizNum" component={Quizzes} />
         </Switch>
+        <Route path='/' component={Footer}></Route>
     </div>
 )
 export default App;

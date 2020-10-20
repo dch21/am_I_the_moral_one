@@ -3,9 +3,11 @@ import ResultsPage from './results'
 import { fetchAllQuestionsFromAQuiz } from '../../actions/quiz_actions'
 // import { fetchQuestionData } from '../../actions/quiz_actions'
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
+    
     return {
-        allPromptTexts: state.prompts
+        allPromptTexts: state.prompts,
+        quiz: parseInt(ownProps.match.params.quizNum)
     };
 }
 

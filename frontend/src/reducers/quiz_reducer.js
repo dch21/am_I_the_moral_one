@@ -1,6 +1,7 @@
 import { RECEIVE_QUESTION_DATA } from '../actions/quiz_actions';
 
 const QuizzesReducer = (state = { quizzes: { questionData: { data: { question: { questionChoices: { choiceA: { demo: null } } } } } } }, action) => {
+    debugger
     Object.freeze(state);
     // let newState = Object.assign({}, state);
     switch (action.type) {

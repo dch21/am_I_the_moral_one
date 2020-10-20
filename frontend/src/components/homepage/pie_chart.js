@@ -6,6 +6,9 @@ import {
 
 
 
+
+
+
 export default class MainPieChart extends PureComponent {
     constructor(props) {
         super(props)
@@ -18,13 +21,23 @@ export default class MainPieChart extends PureComponent {
     }
 
     handleToggle(field) {
-
+      
+        let current = document.getElementsByClassName('active'); 
+        
+        current[0].className = current[0].className.replace(' active', "")
+        // for(let i = 0; i < current.length; i++){
+        //     current[i].className = current[i].className.replace(' active', "")
+        // }
+        
+        document.getElementById(field).className += " active"; 
+        
         this.setState({
             demo: field
         })
     }
     
     componentDidMount() {
+        debugger
         this.props.fetchQuestionData(this.props.questionNumber);
     }
 
@@ -36,11 +49,15 @@ export default class MainPieChart extends PureComponent {
 
 
 
+
+
     render() {
+        
         const [age, ethnicity, gender, location, petChoice, religiousAffilation, politicalLeaning, education] = this.props.demo
 
         const targetDemo = this.state.demo
         if (!this.props.questionData.data) {
+            
             return null
         }
         const questionText = this.props.questionData.data.question.text
@@ -165,20 +182,20 @@ export default class MainPieChart extends PureComponent {
             );
         };
 
-        
+      
         return (
             <div className="data-charts">
                     <div className="header-question-buttons">
                         <div className="buttons-and-text">
-                        <div className="filter-buttons">
-                            <button className="filter-button-item" onClick={() => this.handleToggle(age)}>Age</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(gender)}>Gender</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(location)}>Location</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
-                            <button className="filter-button-item" onClick={() => this.handleToggle(education)}>Education</button>
+                        <div id='filter-buttons' className="filter-buttons">
+                            <button  id='age' className="filter-button-item active" onClick={() => this.handleToggle(age)}>Age</button>
+                            <button  id='ethnicity' className="filter-button-item" onClick={() => this.handleToggle(ethnicity)}>Ethnicity</button>
+                            <button  id='gender' className="filter-button-item" onClick={() => this.handleToggle(gender)}>Gender</button>
+                            <button  id='location' className="filter-button-item" onClick={() => this.handleToggle(location)}>Location</button>
+                            <button  id='petChoice'className="filter-button-item" onClick={() => this.handleToggle(petChoice)}>Pet Choice</button>
+                            <button id='religiousAffilation' className="filter-button-item" onClick={() => this.handleToggle(religiousAffilation)}>Religious Affiliation</button>
+                            <button id='politicalLeaning' className="filter-button-item" onClick={() => this.handleToggle(politicalLeaning)}>Political Leaning</button>
+                            <button  id='education' className="filter-button-item" onClick={() => this.handleToggle(education)}>Education</button>
                         </div>
                         <p className="question-text">{questionText}</p>
                         </div>
