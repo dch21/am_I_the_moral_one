@@ -14,13 +14,12 @@ router.get("/", (req, res) => {
 
 
 
-//  This would get the data for a specific Question NOT a quiz
-router.get("/:id", (req, res) => {
-  // console.log("hit get question")
-  Quiz.findById(req.params.id)
+
+router.get("/questions", (req, res) => {
+  Quiz.find()
     .then((quiz) => res.json(quiz))
     .catch((err) =>
-      res.status(404).json({ noquizfound: "No quiz found with that ID" })
+      res.status(404).json({ noquestionsfound: "No questions found" })
     );
 });
 
