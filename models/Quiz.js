@@ -151,16 +151,6 @@ const QuizSchema = new Schema(
 );
 
 
-    // QuizSchema.methods.tally = function( quizNum, id, user, choice){
-    //     const userAge = "under 18";
-    //         db.quiz.findAndModify({
-    //             query: { _id: id , quizNum: quizNum , choice: choice},
-    //             update: { $inc: { "under 18": 1 } },
-    //         });       
-    //         this.model("Quiz").findAndModify({
-    //             query: { choice: choice},
-    //             update: { $inc: { "under 18": 1 } },
-    // };
 
 
 
