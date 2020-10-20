@@ -10,7 +10,8 @@ Am I the Moral One's backend uses MongoDB, Node.js and Express, it's frontend us
 
 
 # Quizzes 
-
+ ![Quizes](./readme_files/screen_shot.png)
+ 
 In our database, we stored demographic data with each question answer. The benefit of this was that this data was easily retrievable. One downside was that we needed to be creative when it came to creating our quiz form functionality. Our quiz form stored an object (named functions) representing the user's answers. We updated that object each time the user selected an answer button: 
 
  ```js
@@ -22,7 +23,7 @@ handleClickA(){
             }
  ```
  
- ![Logo](./readme_files/screen_shot.png)
+
  
  When the user clicks the submit button, we send her answers and demographic info to our backend: 
  
@@ -74,11 +75,11 @@ handleClickA(){
  # Data Visualization 
  
    To display our data, we used the Recharts API. Here's what it looks like on our website: 
-   
+   ![Graphs](/readme_files/screenshot_2.png)
    
    
    Here's what it looks like under the hood: 
-   ![Logo](/readme_files/screen_shot.png)
+   
    ```html
        <div className="demo-label-bolded">{labels[0]}</div>
           <div className="sample-size-label">
