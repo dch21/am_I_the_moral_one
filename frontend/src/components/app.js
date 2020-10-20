@@ -12,7 +12,7 @@ import Homepage from './homepage/homepage';
 import '../App.css';
 import ResultsPage from "./results/results_container"
 import Footer from './footer/footer'; 
-
+import QuizIndex from './quiz_index/quiz_index_container'
 
 
 
@@ -27,6 +27,8 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignInContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/" component={Splash} />
+
+            <ProtectedRoute exact path="/quizzes/index" component={QuizIndex} /> 
             <ProtectedRoute exact path="/createquiz" component={CreateQuiz} /> 
             <ProtectedRoute exact path="/homepage" component={Homepage} />
             <ProtectedRoute exact path="/quizzes/:quizNum" component={Quizzes} />
