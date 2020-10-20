@@ -40,6 +40,10 @@ export const submitQuiz = (userData) => {
     return axios.post('/api/quizzes/submit', userData);
 };
 
+export const getFirstQuestion = (id) => {
+    return axios.get(`/api/quizzes/${id}/first`);
+};
+
 export const fetchQuestion = (id) => {
     return axios.get(`/api/quizzes/${id}`)
 }
