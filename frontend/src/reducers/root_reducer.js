@@ -4,7 +4,7 @@ import errors from './errors_reducer';
 import questions from './questions_reducer'; 
 import prompts from  "./prompts_reducer";
 import quizzes from "./quiz_reducer";
-import total from "./total_reducer";
+import totals from "./total_reducer";
 
 const RootReducer = combineReducers({
     session, 
@@ -12,7 +12,7 @@ const RootReducer = combineReducers({
     questions,
     prompts,
     quizzes,
-    total
+    totals
 });
 
 export default RootReducer;
