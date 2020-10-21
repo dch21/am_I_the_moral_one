@@ -48,7 +48,7 @@ class CreateQuiz extends React.Component {
         this.props.createQuestion(
           quiz
         )
-       debugger
+    //    debugger
     }
 
     render() {
