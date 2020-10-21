@@ -25,7 +25,7 @@ class QuizIndex extends React.Component {
  
 
     render(){
-        
+        debugger
         if(!this.props.total) return null; 
         let links = this.generateLinks(); 
         return(

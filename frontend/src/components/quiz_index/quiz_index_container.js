@@ -5,7 +5,7 @@ import QuizIndex from './quiz_index'
 
 const mSTP = state => {
   return  {
-   total: state.total.length || {}
+   total: state.totals.length || {}
     }
 }
 
