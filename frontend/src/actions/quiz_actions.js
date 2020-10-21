@@ -53,7 +53,6 @@ export const receiveQuestionData = data => ({
 });
 
 export const fetchQuestionData = questionId => dispatch => {
-  debugger
    return APIUtil.fetchQuestion(questionId)
         .then(data => dispatch(receiveQuestionData(data)))
         .catch(err => console.log(err))

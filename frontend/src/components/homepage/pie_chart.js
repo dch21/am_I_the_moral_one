@@ -37,7 +37,6 @@ export default class MainPieChart extends PureComponent {
     }
     
     componentDidMount() {
-        debugger
         this.props.fetchQuestionData(this.props.questionNumber);
     }
 
