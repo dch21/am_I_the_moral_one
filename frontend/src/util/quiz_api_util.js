@@ -47,7 +47,7 @@ export const updateQuizQuestion = (questionId,
 
 
 export const createQuestion = (quiz) => {
-    debugger
+    // debugger
 
     axios({
         method: 'post',
