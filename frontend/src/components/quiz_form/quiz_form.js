@@ -51,7 +51,7 @@ return(
     <div> 
         <div className='results-link-div'>
             <div></div>
-            <Link to={'/results'} className="go-right-to-results">Go right to results</Link>
+            <Link to={`/results/${this.props.quizNum}`} className="go-right-to-results">Go right to results</Link>
 
         </div>
         <QuizItem questionNumber='1' question={q1} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 

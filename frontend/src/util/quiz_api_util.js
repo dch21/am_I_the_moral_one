@@ -72,7 +72,6 @@ export const fetchQuestion = (id) => {
 }
 
 export const fetchAllQuestionsFromAQuiz = (promptId) => {
-    
     return axios.get(`/api/prompts/${promptId}`)
 }
 
