@@ -73,6 +73,8 @@ router.patch("/update/:id", (req, res) => {
          
         
 router.post("/createQuiz", (req, res) => {
+  console.log("hitting routes/api")
+  debugger
     const newQuiz = new Quiz({
       _id: req.body.id,
 
@@ -84,5 +86,8 @@ router.post("/createQuiz", (req, res) => {
     newQuiz.save().then((quiz) => res.json(quiz));
 });
 
-
 module.exports = router;
+
+
+ 
+      

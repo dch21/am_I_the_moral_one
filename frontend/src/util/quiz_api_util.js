@@ -36,21 +36,29 @@ export const updateQuizQuestion = (questionId,
      });
  }
 
- export const createQuestion = (_id,
-    quizNum, 
-    text,
-    choiceAText, 
-    choiceBText,) => {    
+//  export const createQuestion = (questionData) => {   
+//     debugger 
+    
+//     return axios.post(
+//         "/api/quizzes/createQuiz",
+//         questionData
+//     );
+// }
+
+
+export const createQuestion = (quiz) => {
+    debugger
+
     axios({
-       method: 'post',
-       url: "/api/quizzes/createQuiz",
-       data: {
-           quizNum: quizNum,
-           _id: _id, 
-           text: text, 
-           choiceAText: choiceAText, 
-           choiceBText: choiceBText, 
-       }
+        method: 'post',
+        url: "/api/quizzes/createQuiz",
+        data: {
+            quizNum: quiz.quizNum,
+            id: quiz.id,
+            text: quiz.text,
+            choiceAText: quiz.choiceAText,
+            choiceBText: quiz.choiceBText,
+        }
     });
 }
 

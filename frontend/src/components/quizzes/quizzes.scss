@@ -7,11 +7,12 @@
 }
 
 .new-quizzes-div > div {
-    border-radius: 10px;
+   border-radius: 10px;
     background-color: lightgray;
     text-align: center;
     padding-top: 15px;
-    height: 650px;
+    height: 2070px;
+    overflow-y: scroll;
 }
 
 .new-quizzes-header, .quiz-form-header {
@@ -26,7 +27,7 @@
 }
 
 
-.new-quizzes-links, .quiz-form {
+.new-quizzes-links {
     width: 86%;
     height: 85%;
     border-radius: 10px;
@@ -38,17 +39,18 @@
     overflow-y: scroll;
 }
 
-.new-quizzes-links > div, .quiz-form > div {
-    margin-left: 20px;
-    margin-top: 20px;
-}
+
 
 .quiz-form {
-    width: 96%;
-    height: 85%;
-    border-radius: 10px;
+    // border-radius: 10px;
     background-color: white;
     margin: auto;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 95%;
+
 }
 
 .quiz-form-box {
@@ -59,4 +61,38 @@
 .new-quizzes-links > div:hover {
     cursor: pointer;
     color: navy;
+}
+
+.quiz-form > input {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quiz-form > label {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.input-form-answers {
+        margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 5px;
+}
+
+.input-form-answers > input {
+    width: 49%;
+    margin-top: 5px;
+}
+
+.create-quiz-submit {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
