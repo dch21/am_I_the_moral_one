@@ -34,7 +34,7 @@ router.get("/questions", (req, res) => {
 
 //  GETS the first question of a Quiz given its QuizNum in the param
 router.get("/:id/first", (req, res) => {
-  Quiz.findOne( {quizNum: req.params.quizNum})
+  Quiz.findOne( {quizNum: req.params.id})
     .then((question) => res.json(question))
     .catch((err) =>
       res.status(404).json({ noquestionsfound: "No questions found" })
@@ -74,7 +74,7 @@ router.patch("/update/:id", (req, res) => {
         
 router.post("/createQuiz", (req, res) => {
   console.log("hitting routes/api")
-  debugger
+  // debugger
     const newQuiz = new Quiz({
       _id: req.body.id,
 
