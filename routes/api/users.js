@@ -76,6 +76,12 @@ router.post("/login", (req, res) => {
     });
 });
 
+router.get('/fetchUserInfo', (req, res) => {
+    User.findOne({email: req.query.email})
+    .then((user) => res.json(user))
+
+})
+
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);

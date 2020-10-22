@@ -27,3 +27,13 @@ export const updateCreate = (data) => {
 export const updateAnswers = (data) => {
     return axios.patch('/api/users/updateAnswers', data)
 }
+
+export const fetchUserInfo = email => {
+    debugger
+    return axios.get('/api/users/fetchUserInfo', {
+        params: {
+            email: email
+        }
+    })
+}
+
