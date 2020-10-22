@@ -15,11 +15,9 @@
     "react-scripts": "3.4.3",
     "recharts": "^1.8.5",
     "redux": "^4.0.5",
-    
     "redux-thunk": "^2.3.0",
     "regraph": "0.0.1"
   },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -45,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-recharts": "^1.2.1",
-    "redux-logger": "^3.0.6"
+    "babel-plugin-recharts": "^1.2.1"
   }
 }
