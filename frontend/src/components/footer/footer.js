@@ -12,7 +12,7 @@ class Footer extends React.Component {
               
                             <a>Personal Site</a>
                            
-                            <a>Linked In</a>
+                    <a href='https://www.linkedin.com/in/aaron-lewis-9867821b8/'>Linked In</a>
                      
                             <a>Angel List</a>
                         
@@ -54,7 +54,7 @@ class Footer extends React.Component {
                     
                     <a href='https://www.linkedin.com/in/francis-swayze-729159133/'>Linked In</a>
                   
-                    <a>Angel List</a>
+                    <a href='https://angel.co/u/francis-swayze'>Angel List</a>
                     
                     <a href='https://github.com/fjswayze'>GitHub</a>
                    
