@@ -8,6 +8,7 @@ const passport = require('passport');
 
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
+const { update } = require("../../models/User");
 
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
@@ -54,7 +55,11 @@ router.post("/login", (req, res) => {
                                 gender: user.gender,
                                 location: user.location,
                                 petChoice: user.petChoice,
-                              ethnicity: user.ethnicity
+                                ethnicity: user.ethnicity,
+                                takenQuizzes: user.takenQuizzes, 
+                                createdQuizzes: user.createdQuizzes,
+                                answers: user.answers
+
                      };
 
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -108,4 +113,81 @@ router.post('/register', (req, res) => {
         });
 });
 
+
+
+router.patch("/updateSubmit/", (req, res) => {
+
+   
+    const filter = { email: req.body.email};
+
+
+    const update = {
+        $push: {
+            'takenQuizzes': parseInt(req.body.quizNum)
+        }
+    };
+   User.findOneAndUpdate(filter, update, function (
+       err,
+       result
+   ) {
+       if (err) {
+           res.send(err);
+       } else {
+           res.send(result);
+       }
+   });
+});
+
+
+router.patch("/updateCreate/", (req, res) => {
+
+
+    const filter = { email: req.body.email };
+
+
+    const update = {
+        $push: {
+            'createdQuizzes': parseInt(req.body.quizNum)
+        }
+    };
+    User.findOneAndUpdate(filter, update, function (
+        err,
+        result
+    ) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+
+router.patch("/updateAnswers/", (req, res) => {
+
+
+    const filter = { email: req.body.email };
+
+
+    const update = {
+        $push: {
+            'answers': req.body.answers
+        }
+    };
+    User.findOneAndUpdate(filter, update, function (
+        err,
+        result
+    ) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+
+
+
 module.exports = router;
+
