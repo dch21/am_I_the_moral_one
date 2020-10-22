@@ -14,7 +14,6 @@ router.get("/", (req, res) => {
 
 //  This would get the data for a specific Question NOT a quiz
 router.get("/:id", (req, res) => {
-  // console.log("hit get question")
   Quiz.findById(req.params.id)
     .then((quiz) => res.json(quiz))
     .catch((err) =>
@@ -73,8 +72,6 @@ router.patch("/update/:id", (req, res) => {
          
         
 router.post("/createQuiz", (req, res) => {
-  console.log("hitting routes/api")
-  // debugger
     const newQuiz = new Quiz({
       _id: req.body.id,
 

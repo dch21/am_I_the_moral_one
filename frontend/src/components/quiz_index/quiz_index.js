@@ -1,6 +1,6 @@
 import React from 'react'; 
 import {Link} from 'react-router-dom'
-
+import './quiz_index.scss'
 class QuizIndex extends React.Component {
     constructor(props){
         super(props); 
@@ -12,7 +12,6 @@ class QuizIndex extends React.Component {
     componentDidMount(){
       this.props.fetchTotalNumberOfQuizzes();
         
-        console.log(this.props.total)
     }
   
     generateLinks(){
@@ -20,7 +19,8 @@ class QuizIndex extends React.Component {
         for(let i = 1; i < this.props.total + 1; i++){
             array.push(
                 <div>
-                    <Link to={`/quizzes/${i}`}>{'Quiz' + `${i}`}</Link>
+                    <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'Quiz' + `${i}`}</Link>
+                    <div>First Question: </div>
                     <h1>{this.props.firstQuestion[i - 1]}</h1>
                 </div>
             )
@@ -31,20 +31,20 @@ class QuizIndex extends React.Component {
  
 
     render(){
-        // debugger
+        // 
         if(!this.props.total) return null; 
         if (this.firsts.length === 0) {
             for (let i = 1; i < this.props.total + 1; i++) {
                 // this.props.fetchFirstQuestion(i);
                 this.firsts.push(this.props.fetchFirstQuestion(i))
             }
-            console.log(this.firsts)
         }       
        
         let links = this.generateLinks(); 
         return(
         
         <div className="quiz-index">
+            <h1 className='quiz-index-title'>Choose a Quiz!</h1>
             {links.map(link => {
                 return link 
             })}

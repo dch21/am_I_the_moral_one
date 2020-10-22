@@ -31,7 +31,6 @@ class QuizItem extends React.Component{
         const innerQ = question
         if(!innerQ) return null; 
         
-        console.log(innerQ.choiceBText)  
         return(
             <div className="question-item">
                 <div className='question-title'>{'Question' + " " + this.props.questionNumber} </div>

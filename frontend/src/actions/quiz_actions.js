@@ -35,7 +35,6 @@ export const fetchTotal = () => (dispatch) => {
 
 
 export const fetchQuestion = questionId => dispatch =>  {
-    console.log("hit fetchQuestion")
     return APIUtil.fetchQuizQuestion(questionId)
         .then(question => dispatch(receiveQuestion(question))
         )
@@ -45,7 +44,6 @@ export const fetchQuestion = questionId => dispatch =>  {
 export const fetchAllQuestionsFromAQuiz = promptId => dispatch => (
     APIUtil.fetchAllQuestionsFromAQuiz(promptId)
     .then(prompt => dispatch(receiveAllQuestionsFromAQuiz(prompt)))
-    .catch(err => console.log(err))
 )
 
 
@@ -60,7 +58,6 @@ export const receiveQuestionData = data => ({
 export const fetchQuestionData = questionId => dispatch => {
    return APIUtil.fetchQuestion(questionId)
         .then(data => dispatch(receiveQuestionData(data)))
-        .catch(err => console.log(err))
 };
 
 export const fetchFirstQuestion = questionId => dispatch => {

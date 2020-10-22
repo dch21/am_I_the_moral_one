@@ -4,9 +4,9 @@ import QuizIndex from './quiz_index'
 
 
 const mSTP = state => {
-    // debugger
+    // 
   return  {
-      total: state.totals[0].data || {}, //we got this from putting a debugger here showing how to key into total quizzes
+      total: state.totals[0].data || {}, //we got this from putting a  here showing how to key into total quizzes
       firstQuestion: Object.values(state.firstQuestion) || [],
       //    total: state.totals.length || {}
     }

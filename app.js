@@ -19,8 +19,7 @@ if (process.env.NODE_ENV === 'production') {
 
 mongoose
     .connect(db, { useNewUrlParser: true })
-    .then(() => console.log("Connected to MongoDB AITMO"))
-    .catch(err => console.log(err));
+    
     
 
 app.use(passport.initialize());
@@ -39,7 +38,7 @@ app.use("/api/prompts", prompts);
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => {console.log(`Server is running on port ${port}`)});
+app.listen(port, () => {});
 
 
 

@@ -48,7 +48,7 @@ class QuizForm extends React.Component{
      
         
 return(
-    <div> 
+    <div className='quiz-form-div' > 
         <div className='results-link-div'>
             <div></div>
             <Link to={`/results/${this.props.quizNum}`} className="go-right-to-results">Go right to results</Link>

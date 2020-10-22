@@ -9,7 +9,8 @@ class ResultsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            questionNumber: this.props.quiz,
+            questionNumber: parseInt(`${this.props.quiz -1}` + `${1}`),
+            quizNum: this.props.quiz, 
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -18,12 +19,13 @@ class ResultsPage extends React.Component {
         this.props.fetchAllQuestionsFromAQuiz(this.props.quiz)
     }
 
-    handleClick(field) {
+    handleClick(dbQuestionNumber, questionNumber) {
+        
         let current = document.getElementsByClassName('active-question');
         current[0].className = current[0].className.replace(' active-question', "")
-        document.getElementById(field).className += " active-question"; 
+        document.getElementById(questionNumber).className += " active-question"; 
         this.setState({
-            questionNumber: field,
+            questionNumber: dbQuestionNumber,
         })
     }
 
@@ -39,9 +41,14 @@ class ResultsPage extends React.Component {
                     <div className="quizzes-taken-links">
                         {texts.map ( (text, i) => {
                             if (i === 0){
-                               return <button id={`${i + 1}`} className="question-taken-item active-question" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0, 4).join(" ")}...</button>
-                            } else {
-                               return <button id={`${i + 1}`} className="question-taken-item" onClick={() => this.handleClick(`${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</button>
+                                return <button id={`${i + 1}`} className="question-taken-item active-question" onClick={() => this.handleClick(`${this.state.quizNum - 1}` + `${i + 1}`, `${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0, 4).join(" ")}...</button>
+                            } 
+                            
+                            if (i === 9) {
+                                return <button id={`${i + 1}`} className="question-taken-item" onClick={() => this.handleClick(`${this.state.quizNum}` + `${0}`, `${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0, 4).join(" ")}...</button>
+                            } 
+                            else {
+                               return <button id={`${i + 1}`} className="question-taken-item" onClick={() => this.handleClick((`${this.state.quizNum - 1}` + `${i + 1}`), `${i + 1}`)}>Question {i + 1}: {text.split(" ").slice(0,4).join(" ")}...</button>
                         }})
                         }
                     </div>
