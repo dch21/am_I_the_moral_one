@@ -13,8 +13,7 @@ import '../App.css';
 import ResultsPage from "./results/results_container"
 import Footer from './footer/footer'; 
 import QuizIndex from './quiz_index/quiz_index_container'
-
-
+import UserInfo from './user_info/user_info_container'
 
 const App = () => (
     <div>
@@ -32,6 +31,7 @@ const App = () => (
             <ProtectedRoute exact path="/createquiz" component={CreateQuiz} /> 
             <ProtectedRoute exact path="/homepage" component={Homepage} />
             <ProtectedRoute exact path="/quizzes/:quizNum" component={Quizzes} />
+            <ProtectedRoute exact path="/user_info" component={UserInfo} />
         </Switch>
         <Route path='/' component={Footer}></Route>
     </div>
