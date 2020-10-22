@@ -13,7 +13,17 @@ class QuizForm extends React.Component{
         this.props.functions.map((choice, idx) => {
             let questionNumber = ((this.props.quizNum * 10) - 10 + idx + 1)
             this.props.updateQuizQuestion(questionNumber, this.props.quizNum, choice, user.age, user.education, user.politicalLeaning, user.religiousAffilation, user.gender, user.ethnicity, user.petChoice, user.location)
+            
         })
+        this.props.updateSubmit({
+            email: this.props.user.email, 
+            quizNum: this.props.quizNum
+        })
+        this.props.updateAnswers({
+            email: this.props.user.email,
+            answers: this.props.functions.join(" ")
+        })
+    
         this.props.history.push(`/results/${this.props.quizNum}`)    
     }
     

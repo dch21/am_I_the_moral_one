@@ -6,9 +6,9 @@ class CreateQuiz extends React.Component {
 
     constructor(props) {
         super(props);
-
+        debugger
         this.state = {
-            quiz: parseInt(this.props.totalQuizzes.length) ,
+            quiz: this.props.totalQuizzes[0].data,
             id: '',
             
             text1: '', 
@@ -51,19 +51,29 @@ class CreateQuiz extends React.Component {
 
     componentDidMount() {
         this.props.fetchTotal();
+        this.setState({
+            quiz: this.props.totalQuizzes[0].data
+        })
+        
     }
 
  
 
     update(field){
+        debugger
         return e => this.setState({
-            [field]: e.currentTarget.value
+            [field]: e.currentTarget.value,
+             quiz: this.props.totalQuizzes[0].data
         });
+
 
     }
   
 
     handleClick() {
+        
+    
+        
         let questions = []
 
         questions[0] = {
@@ -157,11 +167,19 @@ class CreateQuiz extends React.Component {
             
             this.props.createQuestion(question)
         })
-   
+
+        this.props.updateCreate({
+            email: this.props.user.email, 
+            quizNum: (this.state.quiz + 1)
+        })
+
+        this.props.history.push('/quizzes')
     }
 
     render() {
        
+  
+
         return (
             <div className="quizzes-page-div">
                 <div className="new-quizzes-div">
