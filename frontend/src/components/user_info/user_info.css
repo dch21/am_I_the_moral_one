@@ -1,0 +1,39 @@
+.user-info-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 50px;
+}
+
+.user-info-column {
+    background-color: rgb(189, 187, 187);
+    height: 530px;
+    width: 310px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.user-info-column > h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inside-user-column {
+    width: 80%;
+    height: 87%;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.inside-user-column > div {
+    margin-top: 30px;
+    margin-left: 10px;
+}
