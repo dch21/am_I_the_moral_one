@@ -5,6 +5,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_FETCHED_USER = 'RECEIVE_FETCHED_USER'; 
 
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
@@ -23,6 +24,11 @@ export const receiveErrors = errors => ({
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
+
+export const receiveFetchedUser = fetchedUser => ({
+    type: RECEIVE_FETCHED_USER, 
+    fetchedUser
+})
 
 export const signup = user => dispatch => {
     return APIUtil.signup(user).then(() => (
@@ -51,3 +57,10 @@ export const logout = () => dispatch => {
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
 };
+
+export const fetchUser = email => dispatch => {
+    debugger
+   return APIUtil.fetchUserInfo(email).then(
+        fetchedUser => dispatch(receiveFetchedUser(fetchedUser))
+    )
+}

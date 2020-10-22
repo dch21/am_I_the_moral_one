@@ -10,7 +10,9 @@ class QuizIndex extends React.Component {
     }
    
     componentDidMount(){
+        debugger
       this.props.fetchTotalNumberOfQuizzes();
+      this.props.fetchUser(this.props.loggedInUser.email)
         
     }
   
