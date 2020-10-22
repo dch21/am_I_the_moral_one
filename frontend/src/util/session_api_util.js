@@ -15,3 +15,15 @@ export const signup = (userData) => {
 export const login = (userData) => {
     return axios.post('/api/users/login', userData);
 };
+
+export const updateSubmit = (data) => {
+    return axios.patch('/api/users/updateSubmit', data)
+}
+
+export const updateCreate = (data) => {
+    return axios.patch('/api/users/updateCreate', data)
+}
+
+export const updateAnswers = (data) => {
+    return axios.patch('/api/users/updateAnswers', data)
+}

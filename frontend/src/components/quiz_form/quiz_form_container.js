@@ -4,6 +4,8 @@ import { fetchQuestion} from '../../actions/quiz_actions';
 import {updateQuizQuestion}  from '../../util/quiz_api_util';
 import {fetchAllQuestionsFromAQuiz} from '../../actions/quiz_actions';
 import {withRouter} from 'react-router-dom'; 
+import {updateSubmit} from '../../util/session_api_util'; 
+import {updateAnswers} from '../../util/session_api_util'; 
 
  const mSTP = (state, ownProps) => {
      
@@ -30,7 +32,9 @@ import {withRouter} from 'react-router-dom';
  const mDTP = dispatch => ({
      fetchAllQuestions: (quizId) => dispatch(fetchAllQuestionsFromAQuiz(quizId)),
      fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)), 
-     updateQuizQuestion: (choice, quizNum, questionId, age, Education, PoliticalLeaning, ReligiousAffilation, Gender, Ethnicity, PetChoice, location) => (updateQuizQuestion(choice, quizNum, questionId, age, Education, PoliticalLeaning, ReligiousAffilation, Gender, Ethnicity, PetChoice, location))
+     updateQuizQuestion: (choice, quizNum, questionId, age, Education, PoliticalLeaning, ReligiousAffilation, Gender, Ethnicity, PetChoice, location) => (updateQuizQuestion(choice, quizNum, questionId, age, Education, PoliticalLeaning, ReligiousAffilation, Gender, Ethnicity, PetChoice, location)),
+     updateSubmit: (data) => updateSubmit(data), 
+     updateAnswers: (data) => updateAnswers(data)
  })
 
  export default withRouter(connect(mSTP, mDTP)(QuizForm)); 

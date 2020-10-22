@@ -42,10 +42,19 @@ const UserSchema = new Schema({
       type: Array, 
       default: []
       },
+    createdQuizzes: {
+      type: Array, 
+      default: []
+      },
+    answers: {
+    type: Array,
+    default: []
+  },
     ethnicity: {
         type: String,
         required: true
     }
+    
 }, {
     timestamps: true
 });
