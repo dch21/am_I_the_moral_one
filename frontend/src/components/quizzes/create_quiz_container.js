@@ -23,7 +23,7 @@ const mSTP = (state) => ({
 })
 
 const mDTP = dispatch => {
-    // debugger
+    // 
     return {
         fetchTotal: () => dispatch(fetchTotal()),
         fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),

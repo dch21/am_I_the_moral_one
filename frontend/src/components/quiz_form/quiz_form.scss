@@ -34,6 +34,8 @@
  .results-link-div{
      display: flex;
      justify-content: space-between;
+     position: absolute;
+     top: 5px;
  }
 
  .quiz-submit {
@@ -117,4 +119,10 @@
 
 .quiz-form-question-text {
     line-height: 1.5;
+}
+
+
+.quiz-form-div{
+    padding-left: 50px; 
+    padding-right: 50px;
 }

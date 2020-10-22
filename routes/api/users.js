@@ -28,7 +28,6 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 });
 
 router.post("/login", (req, res) => {
-    console.log('hit login')
     const { errors, isValid } = validateLoginInput(req.body);
 
     if (!isValid) {
@@ -75,7 +74,6 @@ router.post("/login", (req, res) => {
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
-    console.log("register 1");
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -97,19 +95,17 @@ router.post('/register', (req, res) => {
                     petChoice: req.body.petChoice
                
                 })
-                console.log('register 2') 
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.save()
                             .then(user => res.json(user))
-                            .catch(err => console.log(err));
+                           
                     })
                 })
             }
         });
-        console.log("register 3");
 });
 
 module.exports = router;

@@ -3,7 +3,6 @@ import { login } from './session_api_util';
 
 
 export const fetchQuizQuestion = (questionId) => {
-    console.log("hit question util get question id is:" + questionId)
     return axios.get(`/api/quizzes/${questionId}`); 
 }
     
@@ -37,7 +36,7 @@ export const updateQuizQuestion = (questionId,
  }
 
 //  export const createQuestion = (questionData) => {   
-//     debugger 
+//      
     
 //     return axios.post(
 //         "/api/quizzes/createQuiz",
@@ -47,7 +46,7 @@ export const updateQuizQuestion = (questionId,
 
 
 export const createQuestion = (quiz) => {
-    // debugger
+    // 
 
     axios({
         method: 'post',

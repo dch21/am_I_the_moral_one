@@ -11,7 +11,6 @@ router.get("/test", (req, res) => res.json({ msg: "This is the prompt route" }))
 
 
 router.get("/:id", (req, res) => {
-    console.log("hitting prompts")
    Quiz.find({ quizNum: req.params.id })
         .then((prompts) => res.json(prompts))
         .catch((err) =>
