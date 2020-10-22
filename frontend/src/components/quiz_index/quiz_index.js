@@ -17,13 +17,32 @@ class QuizIndex extends React.Component {
     generateLinks(){
         let array = [];
         for(let i = 1; i < this.props.total + 1; i++){
+            if(i === 1){
+                array.push(
+                    <div>
+                        <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'Philosophical Ethical Dilemas'}</Link>
+                        <div>First Question: </div>
+                        <h1>{this.props.firstQuestion[i - 1]}</h1>
+                    </div>)
+            } 
+            if (i === 2) {
+                array.push(
+                    <div>
+                        <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'Real World Ethical Dilemas'}</Link>
+                        <div>First Question: </div>
+                        <h1>{this.props.firstQuestion[i - 1]}</h1>
+                    </div>)
+            } 
+            
+            if(i > 2) {
             array.push(
                 <div>
-                    <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'Quiz' + `${i}`}</Link>
+                    <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'User Generated Quiz' + `${i}`}</Link>
                     <div>First Question: </div>
                     <h1>{this.props.firstQuestion[i - 1]}</h1>
-                </div>
-            )
+                </div>)
+            }
+            
             
         }
         return array; 
