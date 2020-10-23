@@ -29,7 +29,6 @@ export const updateAnswers = (data) => {
 }
 
 export const fetchUserInfo = email => {
-    debugger
     return axios.get('/api/users/fetchUserInfo', {
         params: {
             email: email

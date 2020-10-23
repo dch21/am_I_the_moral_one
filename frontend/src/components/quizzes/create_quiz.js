@@ -80,7 +80,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text1,
             choiceAText: this.state.answerA1,
             choiceBText: this.state.answerB1,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${1}`) 
         };
         
@@ -88,7 +88,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text2,
             choiceAText: this.state.answerA2,
             choiceBText: this.state.answerB2,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${2}`) 
         };
 
@@ -96,7 +96,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text3,
             choiceAText: this.state.answerA3,
             choiceBText: this.state.answerB3,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${3}`) 
         };
         
@@ -105,7 +105,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text4,
             choiceAText: this.state.answerA4,
             choiceBText: this.state.answerB4,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${4}`) 
         };
     
@@ -114,7 +114,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text5,
             choiceAText: this.state.answerA5,
             choiceBText: this.state.answerB5,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${5}`) 
         };
         
@@ -123,7 +123,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text6,
             choiceAText: this.state.answerA6,
             choiceBText: this.state.answerB6,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${6}`) 
         };
         
@@ -133,7 +133,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text7,
             choiceAText: this.state.answerA7,
             choiceBText: this.state.answerB7,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${7}`) 
         };
 
@@ -141,7 +141,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text8,
             choiceAText: this.state.answerA8,
             choiceBText: this.state.answerB8,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz}` + `${8}`) 
         };
         
@@ -150,7 +150,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text9,
             choiceAText: this.state.answerA9,
             choiceBText: this.state.answerB9,
-            quizNum: this.state.quiz,
+             quizNum: (this.state.quiz + 1),
              id: parseInt(`${this.state.quiz}` + `${9}`) 
         };
         
@@ -159,7 +159,7 @@ class CreateQuiz extends React.Component {
             text: this.state.text10,
             choiceAText: this.state.answerA10,
             choiceBText: this.state.answerB10,
-            quizNum: this.state.quiz,
+            quizNum: (this.state.quiz + 1),
             id: parseInt(`${this.state.quiz + 1}` + `${0}`) 
         };
         
@@ -173,7 +173,7 @@ class CreateQuiz extends React.Component {
             quizNum: (this.state.quiz + 1)
         })
 
-        this.props.history.push('/quizzes')
+        this.props.history.push('/quizzes/index')
     }
 
     render() {

@@ -2,6 +2,7 @@ import { RECEIVE_FIRST_QUESTION } from "../actions/quiz_actions";
 
 
 const firstQuestionReducer = (state = [], action) => {
+    debugger
     Object.freeze(state);
     
     let newState = Object.assign({}, state)
