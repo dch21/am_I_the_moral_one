@@ -63,7 +63,7 @@ export const createQuestion = (quiz) => {
 
 
 export const getFirstQuestion = (id) => {
-    debugger
+    
     return axios.get(`/api/quizzes/${id}/first`);
 };
 

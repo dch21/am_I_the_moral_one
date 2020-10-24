@@ -33,8 +33,7 @@ router.get("/questions", (req, res) => {
 
 //  GETS the first question of a Quiz given its QuizNum in the param
 router.get("/:id/first", (req, res) => {
-  console.log('hit get first question rote'); 
-  console.log(req.params.id); 
+ 
   Quiz.findOne( {quizNum: req.params.id})
     .then((question) => res.json(question))
     .catch((err) =>

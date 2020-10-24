@@ -6,7 +6,7 @@ class CreateQuiz extends React.Component {
 
     constructor(props) {
         super(props);
-        debugger
+        
         this.state = {
             quiz: this.props.totalQuizzes[0].data,
             id: '',
@@ -60,7 +60,7 @@ class CreateQuiz extends React.Component {
  
 
     update(field){
-        debugger
+        
         return e => this.setState({
             [field]: e.currentTarget.value,
              quiz: this.props.totalQuizzes[0].data

@@ -6,8 +6,7 @@ import {
     PieChart, Pie, Sector, Cell, ResponsiveContainer
 } from 'recharts';
 
-import peter from '../../images/Peter.png'; 
-import Christine from '../../images/Christine.png'; 
+
 
 
 class UserInfo extends React.Component {
@@ -22,7 +21,7 @@ class UserInfo extends React.Component {
 
 
     render() {
-        if(!this.props.fetchedUser.email) return null; 
+        if(!this.props.fetchedUser.answers) return null; 
         let user = this.props.fetchedUser; 
         let utilitarian = 0
         let kant = 0
@@ -46,7 +45,7 @@ class UserInfo extends React.Component {
                     Based on your answers to the first quiz, we think your moral views are largely consequentialist.
                     Consequentialists judge the morality of an action based on the consequences of that action. 
                     In contrast, Kantians care about whether an action is moral in and of itself, outside of its actual effects. 
-                    For example, a consequentialist would approve of telling a lie for the greater good, a Kantian would not. 
+                    A consequentialist would approve of telling a lie for the greater good, a Kantian would not. 
                      
                         </p > 
             </div>
@@ -55,8 +54,8 @@ class UserInfo extends React.Component {
                         < p > 
                     Based on you answers to the first quiz, we think your moral views are largely Kantian.
                     Kantians care about whether an action is moral in and of itself, outside of its actual effects. 
-                    In contrast, Consequentialists judge the morality of an action based on the consequences of that action.
-                    For example, a consequentialist would approve of telling a lie for the greater good, a Kantian would not. 
+                    In contrast, Consequentialists judge the morality of an action based on the consequences of that action. 
+                     A consequentialist would approve of telling a lie for the greater good, a Kantian would not. 
                         </p >
 
                     </div>
@@ -66,17 +65,24 @@ class UserInfo extends React.Component {
 
         let philosopherPic = utilitarian > kant ? 
             <div>
-                <image src={peter}></image>
-                <p>Peter Singer is the most influential contemporary Consequentialist.</p>
-
+                <div className='space'></div>
+                <div className='peter-div'></div>
+                
+                <p>Peter Singer is the most influential contemporary consequentialist.</p>
+                <br></br>
+                <Link className='peter-link' to='https://www.youtube.com/watch?v=Diuv3XZQXyc'>Peter's TED talk.</Link>
             </div>
 
             :
 
             <div>
-                <image src={Christine}></image>
+                <div className='space'></div>
+                <div className='christine-div'></div>
                 <p>Christine Korsgaard is the most influential contemporary Kantian. </p>
+                <Link className='peter-link' to='https://www.youtube.com/watch?v=i_3EgMcdxoQ'>Interview with Christine Korsgaard.</Link>
             </div>
+
+        
         const demoGroup1A = utilitarian;
         const demoGroup1B = kant; 
 
@@ -118,13 +124,22 @@ class UserInfo extends React.Component {
                             <div>Pet Choice: {user.petChoice}</div>
                             <div>Political Leaning: {user.politicalLeaning}</div>
                             <div>Religious Affiliation: {user.religiousAffilation}</div>
-                            <div>Quizzes Taken: {user.takenQuizzes}</div>
-                            <div>Quizzes Created: {user.createdQuizzes}</div>
+                            <div>Quizzes Taken: 
+                                {user.takenQuizzes.map(quiz => {
+                                    return <Link to={`results/${quiz}`}>{quiz} </Link>
+                                })}
+                            </div>
+                            <div>Quizzes Created: 
+                                {user.createdQuizzes.map(quiz => {
+                                    return <Link to={`results/${quiz}`}>{quiz} </Link>
+                                })}
+                                
+                                </div>
                         </div>
                     </div>
 
                     <div className="user-info-column">
-                        <h1>Are you a Consequentialist or a Kantian?</h1>
+                      
                         
                       
                         <div className="inside-user-column2">

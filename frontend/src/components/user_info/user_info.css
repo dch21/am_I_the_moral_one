@@ -35,11 +35,43 @@
 }
 
 .user-info-pie{
-    width: 50%;
+    width: 40%;
     padding: 10px;
 }
 
 .inside-user-column > div {
     margin-top: 30px;
     margin-left: 10px;
+}
+
+.peter-div{
+    background-image: url('../../images/Peter.png');
+    height: 260px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+    margin-bottom: 10px;
+}
+
+.peter-link{
+    margin-top: 10px;
+}
+
+.peter-link:hover{
+    color: #70d9e4;
+}
+
+.christine-div{
+    background-image: url('../../images/Christine.png');
+     height: 320px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+    margin-bottom: 10px;
+}
+
+.space{
+   height: 20px; 
 }
