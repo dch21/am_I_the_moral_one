@@ -35,6 +35,8 @@ class ResultsPage extends React.Component {
         const demographicsArray = ["age", "ethnicity", "gender", "location", "petChoice", "religiousAffilation", "politicalLeaning", "education"]   
         
         return (
+            <div>
+
             <div className="jake-result-master-div">
                 <div className="quizzes-taken-directory">
                     <h1 className="quizzes-taken-header">Questions</h1>
@@ -60,6 +62,7 @@ class ResultsPage extends React.Component {
                     </div>
                 </div>
 
+            </div>
             </div>
         );
     }
