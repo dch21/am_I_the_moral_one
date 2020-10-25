@@ -2,25 +2,25 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 120px;
-    margin-right: 120px;
+    /* margin-left: 120px;
+    margin-right: 120px; */
     margin-top: 50px;
 }
 
-.user-info-column {
+/* .user-info-column {
     background-color: rgb(189, 187, 187);
     height: 530px;
     width: 310px;
     border-radius: 10px;
     text-align: center;
-}
+} */
 
 .user-info-column > h1 {
     margin-left: auto;
     margin-right: auto;
 }
 
-.inside-user-column {
+.inside-user-column, .inside-user-column2 {
     width: 80%;
     height: 87%;
     border-radius: 10px;
@@ -31,9 +31,47 @@
     flex-direction: column;
     text-align: left;
     overflow-y: scroll;
+    
+}
+
+.user-info-pie{
+    width: 40%;
+    padding: 10px;
 }
 
 .inside-user-column > div {
     margin-top: 30px;
     margin-left: 10px;
+}
+
+.peter-div{
+    background-image: url('../../images/Peter.png');
+    height: 260px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+    margin-bottom: 10px;
+}
+
+.peter-link{
+    margin-top: 10px;
+}
+
+.peter-link:hover{
+    color: #70d9e4;
+}
+
+.christine-div{
+    background-image: url('../../images/Christine.png');
+     height: 320px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+    margin-bottom: 10px;
+}
+
+.space{
+   height: 20px; 
 }

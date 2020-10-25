@@ -10,7 +10,7 @@ class NavBar extends React.Component {
     }
 
     handleClick(){
-        const demoUser = {email: 'bob@gmail.com', password: 'password'}; 
+        const demoUser = {email: 'dummy@gmail.com', password: 'password'}; 
         this.props.login(demoUser);
     }
 
@@ -23,6 +23,7 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
+                    <Link className='user-page-link' to='/user_info'>Your Moral Views</Link>
                     <button onClick={this.logoutUser} className="logout-button">Logout</button>
                     <Link to={`/quizzes/index`}className="go-right-to-results">See all Quizes</Link>
                 </div>

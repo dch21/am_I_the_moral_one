@@ -61,7 +61,7 @@ export const fetchQuestionData = questionId => dispatch => {
 };
 
 export const fetchFirstQuestion = questionId => dispatch => {
-  debugger
+  
   return APIUtil.getFirstQuestion(questionId)
     .then(questionObject => dispatch(receiveFirstQuestion(questionObject)))
 };

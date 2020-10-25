@@ -67,7 +67,7 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className='errors'>
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>
                         {this.state.errors[error]}
@@ -103,8 +103,8 @@ class SignupForm extends React.Component {
                         
                         <select defaultValue= "Education" name = 'education' placeholder="Highest Level of Education" onChange={this.update('education')}>
                             <option disabled>Education</option>
-                            <option value="High-school-or-lower">highschool or lower</option>
-                            <option value="Undergraduate-degree">undergraduate degree</option>
+                            <option value="High-school-or-lower">Highschool or lower</option>
+                            <option value="Undergraduate-degree">Undergraduate degree</option>
                             <option value= "Bootcamp" >Bootcamp</option>
                             <option value="Masters">Masters</option>
                             <option value="PHD">PHD</option>
@@ -113,7 +113,7 @@ class SignupForm extends React.Component {
                         <select defaultValue="Age Range" name='age' onChange={this.update('age')}>
                             <option disabled>Age Range</option>
 
-                            <option value="under-18">under 18</option>
+                            <option value="under-18">Under 18</option>
                             <option value="18-22">18 to 22</option>
                             <option value="23-40">22 to 40</option>
                             <option value="41-59">40 to 60</option>
@@ -188,8 +188,9 @@ class SignupForm extends React.Component {
                             <option value="Multi-racial">Multi-racial</option>
                             <option value="Other">Other</option>
                         </select>
-                        <input type="submit" value="Submit" className="signup-submit"/>
                         {this.renderErrors()}
+                        <input type="submit" value="Submit" className="signup-submit"/>
+                       
                     </div>
                 </form>
             </div>

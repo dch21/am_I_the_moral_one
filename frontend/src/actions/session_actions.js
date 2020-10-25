@@ -59,7 +59,7 @@ export const logout = () => dispatch => {
 };
 
 export const fetchUser = email => dispatch => {
-    debugger
+    
    return APIUtil.fetchUserInfo(email).then(
         fetchedUser => dispatch(receiveFetchedUser(fetchedUser))
     )

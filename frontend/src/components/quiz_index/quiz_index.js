@@ -38,7 +38,7 @@ class QuizIndex extends React.Component {
             if(i > 2) {
             array.push(
                 <div>
-                    <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'User Generated Quiz' + `${i}`}</Link>
+                    <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'User Generated Quiz' + ' ' + `${i}`}</Link>
                     <div>First Question: </div>
                     <h1>{this.props.firstQuestion[i - 1]}</h1>
                 </div>)
