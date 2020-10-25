@@ -10,7 +10,7 @@ class NavBar extends React.Component {
     }
 
     handleClick(){
-        const demoUser = {email: 'dummy@gmail.com', password: 'password'}; 
+        const demoUser = {email: 'demo@gmail.com', password: 'password'}; 
         this.props.login(demoUser);
     }
 

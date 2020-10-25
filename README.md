@@ -110,6 +110,14 @@ We used the Recharts API to visualize the demographic data for our quizes, i.e. 
                         }
                     </Pie>
                 </PieChart>
+
+ # Quiz Creation 
+
+  ![Quiz Creation](/readme_files/create.png)
+
+  # User Info 
+
+  ![user](/readme_files/user_info.png)
               
    
             
