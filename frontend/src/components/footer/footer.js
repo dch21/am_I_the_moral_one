@@ -25,23 +25,22 @@ class Footer extends React.Component {
                         <h3>Andrew Zessar</h3>
                     <a>Personal Site</a>
                
-                
-                    
+            
                     <a href='https://www.linkedin.com/in/andrew-zessar-93067192/'>Linked In</a>
                    
-                    <a>Angel List</a>
+                    <a href='https://angel.co/u/andrew-zessar-1'>Angel List</a>
                     
                     <a href='https://github.com/azessar'>GitHub</a>
                
                     </div>
 
                     <div>
-                        <h3>Dan Chu</h3>
+                        <h3>Daniel Chu</h3>
                     <a href='https://dch21.github.io/'>Personal Site</a>
                   
                     <a href='https://www.linkedin.com/in/daniel-chu-5577b376/'>Linked In</a>
                 
-                    <a>Angel List</a>
+                    <a href='https://angel.co/u/daniel-chu-18'>Angel List</a>
                     
                     <a href='https://github.com/dch21'>GitHub</a>
                    
