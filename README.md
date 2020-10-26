@@ -25,7 +25,7 @@ handleClickA(){
  
 
  
- When the user clicks the submit button, we send her answers and demographic info to our backend: 
+ When the user clicks the submit button, we send their answers and demographic info to our backend: 
  
  
   ```js
@@ -74,8 +74,8 @@ handleClickA(){
  
  # Data Visualization 
  
-We used the Recharts API to visualize the demographic data for our quizes, i.e. what answers people of diffrent political ideologies gave on a given moral dilema. Here's what it looks like on our website: 
-  
+We used the Recharts API to visualize the demographic data for our quizzes, i.e. what answers people of different political ideologies gave on a given moral dilemma. Here's what it looks like on our website: 
+
 ![Graphs](/readme_files/screenshot_2.png)
 
 
@@ -83,7 +83,7 @@ We used the Recharts API to visualize the demographic data for our quizes, i.e. 
 
 
 
-These graphs draw on data from our Redux state. Below are two pictures displaying a sample redux state: 
+These graphs draw on data from our Redux state. Below are two pictures displaying a sample Redux state: 
 
 ![Redux](/readme_files/ReduxState1.png)
 
@@ -125,8 +125,8 @@ Here's what the pie chart looks like under the hood:
 
   # User Info 
   
-Based on their answers to the first quiz, we judge whether a users moral views align more with Consequentialist or Kantian ethics. This information is displayed on the user info page.  
- 
+Based on their answers to the first quiz, we judge whether a user's moral views align more with Consequentialist or Kantian ethics. This information is displayed on the user info page.  
+
   ![user](/readme_files/user_info.png)
               
    
