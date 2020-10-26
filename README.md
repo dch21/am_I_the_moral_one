@@ -1,18 +1,18 @@
 # Am I the Moral One? 
 
-Am I the Moral One  is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). 
+Am I the Moral One is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). 
 
 [Live Demo]( https://amithemoralone.herokuapp.com/#/)
 
 # Technologies Used 
 
-Am I the Moral One's backend uses MongoDB, Node.js and Express, it's frontend uses React.js. To implement the data visualization we used the Recharts API. 
+Am I the Moral One's backend uses MongoDB, Node.js and Express; it's frontend uses React.js. To implement the data visualization, we used the Recharts API. 
 
 
 # Quizzes 
  ![Quizes](./readme_files/screen_shot.png)
  
-In our database, we stored demographic data with each question answer. The benefit of this was that this data was easily retrievable. However, this also meant that we needed to be creative when it came to creating our quiz form functionality. Our quiz form stored an object (named functions) representing the user's answers. We updated that object each time the user selected an answer button: 
+In our database, we stored demographic data with each question answer. The benefit was that this data was easily retrievable. However, this also meant that we needed to be creative when it came to creating our quiz form functionality. Our quiz form stored an object (named functions) representing the user's answers. We updated that object each time the user selected an answer button: 
 
  ```js
 handleClickA(){
@@ -40,7 +40,7 @@ handleClickA(){
     }
  ```
  
- Which then update's our database: 
+ This then updates our database: 
  
  ```js
  
@@ -125,18 +125,7 @@ Here's what the pie chart looks like under the hood:
 
   # User Info 
   
-Based on their answers to the first quiz, we judge whether a user's moral views align more with Consequentialist or Kantian ethics. This information is displayed on the user info page.  
+Based on their answers to the first quiz, we judge whether a user's moral views align more with Consequentialist or Kantian ethics. We keep track of the user's answers to the first quiz and use their answer choices to calculate which ethical camp they fall into. This information is displayed on the user info page. 
 
   ![user](/readme_files/user_info.png)
               
-   
-            
-
-
-
-
-
-
-
-
-
