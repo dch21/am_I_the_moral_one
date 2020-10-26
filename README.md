@@ -1,4 +1,4 @@
-# AmITheMoralOne? 
+# Am I the Moral One? 
 
 Am I the Moral One  is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). 
 
