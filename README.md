@@ -1,6 +1,6 @@
 # AmITheMoralOne? 
 
-Am I the Moral One  is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). Currently, our project only tracks data for one quiz. However, in the future users will be able to create their own quizzes and upload them to the site.
+Am I the Moral One  is a web application that asks users a series of ethical dilemmas and records their answers. After they finish the survey, they can see how their answers compare to other users, and look at answer choice patterns across demographic groups (e.g.: gender, religious affiliation, political affiliation, etc.). 
 
 [Live Demo]( https://amithemoralone.herokuapp.com/#/)
 
@@ -74,18 +74,22 @@ handleClickA(){
  
  # Data Visualization 
  
-We used the Recharts API to visualize the demographic data for our quizes, i.e. what answers people of diffrent political ideologies gave on a given moral dilema. This data was taken from our Redux state. Below are two pictures displaying a sample redux state: 
+We used the Recharts API to visualize the demographic data for our quizes, i.e. what answers people of diffrent political ideologies gave on a given moral dilema. Here's what it looks like on our website: 
+  
+![Graphs](/readme_files/screenshot_2.png)
+
+
+
+
+
+
+These graphs draw on data from our Redux state. Below are two pictures displaying a sample redux state: 
 
 ![Redux](/readme_files/ReduxState1.png)
 
 ![Redux](/readme_files/ReduxState2.png)
   
-  
- Here's what it looks like on our website: 
-   ![Graphs](/readme_files/screenshot_2.png)
-   
-   
-   Here's what the pie chart looks like under the hood: 
+Here's what the pie chart looks like under the hood: 
    
    ```html
        <div className="demo-label-bolded">{labels[0]}</div>
@@ -110,6 +114,20 @@ We used the Recharts API to visualize the demographic data for our quizes, i.e. 
                         }
                     </Pie>
                 </PieChart>
+
+```
+
+ # Quiz Creation 
+  
+ Users can create their own quizzes, which then appear on the quiz index page of our site. 
+
+  ![Quiz Creation](/readme_files/create.png)
+
+  # User Info 
+  
+Based on their answers to the first quiz, we judge whether a users moral views align more with Consequentialist or Kantian ethics. This information is displayed on the user info page.  
+ 
+  ![user](/readme_files/user_info.png)
               
    
             

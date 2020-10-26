@@ -10,7 +10,7 @@ class NavBar extends React.Component {
     }
 
     handleClick(){
-        const demoUser = {email: 'dummy@gmail.com', password: 'password'}; 
+        const demoUser = {email: 'demo@gmail.com', password: 'password'}; 
         this.props.login(demoUser);
     }
 
@@ -39,10 +39,20 @@ class NavBar extends React.Component {
         }
     }
 
+    getLinks2(){
+        if (this.props.loggedIn){
+            return (
+                <Link className='create-quiz-link' to='/createquiz'>Create A Quiz</Link>
+            )
+        }
+    }
+
     render() {
         return (
             <div className="nav-bar">
-                <div className="space"></div>
+                <div className="space">
+                    {this.getLinks2()}
+                </div>
                 <Link to="/" className="nav-title">Am I the Moral One?</Link>
                 { this.getLinks()}
             </div>

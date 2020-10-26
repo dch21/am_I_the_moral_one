@@ -6,13 +6,17 @@
 }
 
 .space{
-    width: 200px;
+    width: 262.66px;
+    margin-top: 20px;
+    font-size: 12px;
+    display: flex;
+
 }
 
 .nav-links{
     display: flex;
     justify-content: space-between;
-    width: 200px;
+    width: 262.66px;
     margin-top: 20px;
 }
 
@@ -67,6 +71,13 @@
 .user-page-link:hover {
   
    color: #70d9e4;
-    font-size: 14px;
+   
 }
 
+.create-quiz-link{
+    padding: 10px;
+}
+
+.create-quiz-link:hover{
+    color: #70d9e4;
+}

@@ -10,13 +10,13 @@ class Footer extends React.Component {
                       <h3>Aaron Lewis</h3>
                     
               
-                            <a>Personal Site</a>
+                    <a href='https://alewy00.github.io/'>Personal Site</a>
                            
                     <a href='https://www.linkedin.com/in/aaron-lewis-9867821b8/'>Linked In</a>
                      
                             <a>Angel List</a>
                         
-                            <a>GitHub</a>
+                    <a href='https://github.com/Alewy00'>GitHub</a>
                 
                         
                   </div>
@@ -37,7 +37,7 @@ class Footer extends React.Component {
 
                     <div>
                         <h3>Dan Chu</h3>
-                    <a>Personal Site</a>
+                    <a href='https://dch21.github.io/'>Personal Site</a>
                   
                     <a href='https://www.linkedin.com/in/daniel-chu-5577b376/'>Linked In</a>
                 
