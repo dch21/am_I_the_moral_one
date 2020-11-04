@@ -12,9 +12,9 @@ class Footer extends React.Component {
               
                     <a href='https://alewy00.github.io/'>Personal Site</a>
                            
-                    <a href='https://www.linkedin.com/in/aaron-lewis-9867821b8/'>Linked In</a>
+                    <a href='https://www.linkedin.com/in/aaron-lewis-9867821b8/'>LinkedIn</a>
                      
-                            <a>Angel List</a>
+                            <a>AngelList</a>
                         
                     <a href='https://github.com/Alewy00'>GitHub</a>
                 
@@ -26,9 +26,9 @@ class Footer extends React.Component {
                     <a>Personal Site</a>
                
             
-                    <a href='https://www.linkedin.com/in/andrew-zessar-93067192/'>Linked In</a>
+                    <a href='https://www.linkedin.com/in/andrew-zessar-93067192/'>LinkedIn</a>
                    
-                    <a href='https://angel.co/u/andrew-zessar-1'>Angel List</a>
+                    <a href='https://angel.co/u/andrew-zessar-1'>AngelList</a>
                     
                     <a href='https://github.com/azessar'>GitHub</a>
                
@@ -38,9 +38,9 @@ class Footer extends React.Component {
                         <h3>Daniel Chu</h3>
                     <a href='https://dch21.github.io/'>Personal Site</a>
                   
-                    <a href='https://www.linkedin.com/in/daniel-chu-5577b376/'>Linked In</a>
+                    <a href='https://www.linkedin.com/in/daniel-chu-5577b376/'>LinkedIn</a>
                 
-                    <a href='https://angel.co/u/daniel-chu-18'>Angel List</a>
+                    <a href='https://angel.co/u/daniel-chu-18'>AngelList</a>
                     
                     <a href='https://github.com/dch21'>GitHub</a>
                    
@@ -51,9 +51,9 @@ class Footer extends React.Component {
                    
                     <a href='https://fjswayze.github.io' >Personal Site</a>
                     
-                    <a href='https://www.linkedin.com/in/francis-swayze-729159133/'>Linked In</a>
+                    <a href='https://www.linkedin.com/in/francis-swayze-729159133/'>LinkedIn</a>
                   
-                    <a href='https://angel.co/u/francis-swayze'>Angel List</a>
+                    <a href='https://angel.co/u/francis-swayze'>AngelList</a>
                     
                     <a href='https://github.com/fjswayze'>GitHub</a>
                    

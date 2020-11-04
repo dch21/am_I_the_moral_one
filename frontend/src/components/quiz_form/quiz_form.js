@@ -61,9 +61,10 @@ return(
     <div className='quiz-form-div' > 
         <div className='results-link-div'>
             <div></div>
-            <Link to={`/results/${this.props.quizNum}`} className="go-right-to-results">Go right to results</Link>
+           
 
         </div>
+        
         <QuizItem questionNumber='1' question={q1} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
         <QuizItem questionNumber='2' question={q2} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
         <QuizItem questionNumber='3' question={q3} action={this.props.updateQuizQuestion} user={this.props.user} functions={this.props.functions}/> 
