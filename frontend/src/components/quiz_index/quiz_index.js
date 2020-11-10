@@ -23,8 +23,9 @@ class QuizIndex extends React.Component {
                     <div>
                         <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'Philosophical Ethical Dilemas'}</Link>
                         <div>First Question: </div>
-                        <h1>{this.props.firstQuestion[i - 1]}</h1>
-                        <Link to={`/results/${i}`} className="results">Go to results</Link>
+                        <h1 >{this.props.firstQuestion[i - 1]}</h1>
+                        <br></br>
+                        <Link to={`/results/${i}`} className="results">See data visualization of results</Link>
                     </div>)
             } 
             if (i === 2) {
@@ -32,8 +33,9 @@ class QuizIndex extends React.Component {
                     <div>
                         <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'Real World Ethical Dilemas'}</Link>
                         <div>First Question: </div>
-                        <h1>{this.props.firstQuestion[i - 1]}</h1>
-                        <Link to={`/results/${i}`} className="results">Go to results</Link>
+                        <h1 >{this.props.firstQuestion[i - 1]}</h1>
+                        <br></br>
+                        <Link to={`/results/${i}`} className="results">See data visualization of results</Link>
                     </div>)
             } 
             
@@ -42,8 +44,9 @@ class QuizIndex extends React.Component {
                 <div>
                     <Link className='quiz-index-link' to={`/quizzes/${i}`}>{'User Generated Quiz' + ' ' + `${i}`}</Link>
                     <div>First Question: </div>
-                    <h1>{this.props.firstQuestion[i - 1]}</h1>
-                    <Link to={`/results/${i}`} className="results" >Go to results</Link>
+                    <h1 > {this.props.firstQuestion[i - 1]}</h1>
+                    <br></br>
+                    <Link to={`/results/${i}`} className="results" >See data visualization of results</Link>
                 </div>)
             }
             
