@@ -10,13 +10,13 @@ class Footer extends React.Component {
                       <h3>Aaron Lewis</h3>
                     
               
-                    <a href='https://alewy00.github.io/'>Personal Site</a>
+                    <a href='https://alewy00.github.io/' target="_blank">Personal Site</a>
                            
-                    <a href='https://www.linkedin.com/in/aaron-lewis-9867821b8/'>LinkedIn</a>
+                    <a href='https://www.linkedin.com/in/aaron-lewis-9867821b8/' target="_blank">LinkedIn</a>
                      
                             <a>AngelList</a>
                         
-                    <a href='https://github.com/Alewy00'>GitHub</a>
+                    <a href='https://github.com/Alewy00' target="_blank">GitHub</a>
                 
                         
                   </div>
@@ -26,36 +26,36 @@ class Footer extends React.Component {
                     <a>Personal Site</a>
                
             
-                    <a href='https://www.linkedin.com/in/andrew-zessar-93067192/'>LinkedIn</a>
+                    <a href='https://www.linkedin.com/in/andrew-zessar-93067192/' target="_blank">LinkedIn</a>
                    
-                    <a href='https://angel.co/u/andrew-zessar-1'>AngelList</a>
+                    <a href='https://angel.co/u/andrew-zessar-1' target="_blank">AngelList</a>
                     
-                    <a href='https://github.com/azessar'>GitHub</a>
+                    <a href='https://github.com/azessar' target="_blank">GitHub</a>
                
                     </div>
 
                     <div>
                         <h3>Daniel Chu</h3>
-                    <a href='https://dch21.github.io/'>Personal Site</a>
+                    <a href='https://dch21.github.io/' target="_blank">Personal Site</a>
                   
-                    <a href='https://www.linkedin.com/in/daniel-chu-5577b376/'>LinkedIn</a>
+                    <a href='https://www.linkedin.com/in/daniel-chu-5577b376/' target="_blank">LinkedIn</a>
                 
-                    <a href='https://angel.co/u/daniel-chu-18'>AngelList</a>
+                    <a href='https://angel.co/u/daniel-chu-18' target="_blank">AngelList</a>
                     
-                    <a href='https://github.com/dch21'>GitHub</a>
+                    <a href='https://github.com/dch21' target="_blank">GitHub</a>
                    
                     </div>
 
                     <div>
                         <h3>Francis Swayze</h3>
                    
-                    <a href='https://fjswayze.github.io' >Personal Site</a>
+                    <a href='https://fjswayze.github.io' target="_blank">Personal Site</a>
                     
-                    <a href='https://www.linkedin.com/in/francis-swayze-729159133/'>LinkedIn</a>
+                    <a href='https://www.linkedin.com/in/francis-swayze-729159133/' target="_blank">LinkedIn</a>
                   
-                    <a href='https://angel.co/u/francis-swayze'>AngelList</a>
+                    <a href='https://angel.co/u/francis-swayze' target="_blank">AngelList</a>
                     
-                    <a href='https://github.com/fjswayze'>GitHub</a>
+                    <a href='https://github.com/fjswayze' target="_blank">GitHub</a>
                    
                     </div>
 
