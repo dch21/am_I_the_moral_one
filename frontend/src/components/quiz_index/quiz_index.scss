@@ -8,7 +8,7 @@
 }
 
 
-.quiz-index div, h1{
+.quiz-index div, h1, a{
     padding: 10px;
 }
 
@@ -19,4 +19,21 @@
 .quiz-index-link:hover{
     cursor: pointer;
     color: green;
+}
+
+.results{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    padding: 5px; 
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+}
+
+.results:hover{
+    color: white;
+    background-color: #2c9c3f;
+    
 }
