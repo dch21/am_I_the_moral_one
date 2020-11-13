@@ -42,7 +42,7 @@ class NavBar extends React.Component {
     getLinks2(){
         if (this.props.loggedIn){
             return (
-                <Link className='create-quiz-link' to='/createquiz'>Create A Quiz</Link>
+                <Link id="create-quiz-padding" className='create-quiz-link' to='/createquiz'>Create A Quiz</Link>
             )
         }
     }
