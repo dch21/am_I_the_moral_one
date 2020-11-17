@@ -37,7 +37,11 @@ class UserInfo extends React.Component {
             }
         })
 
-                
+        function onlyUnique(value, index, self){
+            return self.indexOf(value) === index; 
+        }
+
+        let uniqueQuizzesTaken  = this.props.fetchedUser.takenQuizzes.filter(onlyUnique); 
         
         let personality = utilitarian > kant ? 
         <div>
@@ -70,7 +74,7 @@ class UserInfo extends React.Component {
                 
                 <p>Peter Singer is the most influential contemporary consequentialist.</p>
                 <br></br>
-                <Link className='peter-link' to='https://www.youtube.com/watch?v=Diuv3XZQXyc'>Peter's TED talk.</Link>
+                <a className='peter-link' href='https://www.youtube.com/watch?v=Diuv3XZQXyc'>Peter's TED talk.</a>
             </div>
 
             :
@@ -79,7 +83,7 @@ class UserInfo extends React.Component {
                 <div className='space'></div>
                 <div className='christine-div'></div>
                 <p>Christine Korsgaard is the most influential contemporary Kantian. </p>
-                <Link className='peter-link' to='https://www.youtube.com/watch?v=i_3EgMcdxoQ'>Interview with Christine Korsgaard.</Link>
+                <a className='peter-link' href='https://www.youtube.com/watch?v=i_3EgMcdxoQ'>Interview with Christine Korsgaard.</a>
             </div>
 
         
@@ -125,7 +129,7 @@ class UserInfo extends React.Component {
                             <div>Political Leaning: {user.politicalLeaning}</div>
                             <div>Religious Affiliation: {user.religiousAffilation}</div>
                             <div>Quizzes Taken: 
-                                {user.takenQuizzes.map(quiz => {
+                                {uniqueQuizzesTaken.map(quiz => {
                                     return <Link to={`results/${quiz}`}>{quiz} </Link>
                                 })}
                             </div>

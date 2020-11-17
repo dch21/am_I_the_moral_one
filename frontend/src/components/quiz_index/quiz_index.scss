@@ -1,5 +1,6 @@
 .quiz-index{
     padding: 20px; 
+    display: flex;
 }
 
 .quiz-index-title {
@@ -19,6 +20,16 @@
 .quiz-index-link:hover{
     cursor: pointer;
     color: green;
+}
+
+.quiz-index-pic{
+    margin-left: 50px;
+    background-image: url('../../images/woods.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 50%;
 }
 
 .results{

@@ -39,3 +39,19 @@
 .images-div img {
     width: 50%;
 }
+
+.landing-page-text {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 100px;
+    background-color: #00000085;
+}
+
+.ethics-definition{
+    font-size: 30px;
+}
